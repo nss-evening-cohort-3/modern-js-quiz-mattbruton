@@ -28,13 +28,6 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-// stretch goal: Make Jasmine and Browserify work together
-// gulp.task('test', function() {
-//   gulp.src('spec/RobotSpec.js')
-//   // gulp-jasmine works on filepaths so you can't have any plugins before it
-//   .pipe(jasmine());
-// });
-
 gulp.task('watch', function() {
   gulp.watch(['./javascripts/**/*.js'], ['lint', 'bundle']);
 });
