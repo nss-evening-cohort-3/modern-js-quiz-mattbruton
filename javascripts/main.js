@@ -1,3 +1,5 @@
 "use strict";
 
-console.log("Linked");
+let robots = require('./robots.js');
+
+robots.testLink();
