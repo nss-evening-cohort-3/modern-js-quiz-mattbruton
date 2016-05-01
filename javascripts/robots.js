@@ -1,5 +1,7 @@
 "use strict";
 
+let weapons = require('./weapons.js');
+
 let Robot = {};
 
   ///////////////////////
@@ -10,9 +12,9 @@ let Robot = {};
 Robot.Player = function() {
   this.type = null;
   this.model = null;
-  this.weapon = null;
+  this.weapon = "Empty Holster";
   this.name = "Malfunctioning Scrapbot";
-  this.health = Math.floor(Math.random() * 15 + 60);
+  this.health = Math.floor(Math.random() * 20 + 80);
   this.shield = 0;
   this.dmgInc = 0;
   this.evasion = 0;
@@ -115,8 +117,9 @@ Robot.Tankbot2020.prototype = new Robot.Tankbot();
 
 
 Robot.Psybot = function() {
-  this.health -= 5;
+  this.health -= 10;
   this.type = "Psybot";
+  this.shield += Math.floor(Math.random() * 20 + 5);
   this.evasion += 5;
 };
 
@@ -129,7 +132,7 @@ Robot.Psybot.prototype = new Robot.Player();
 
 
 Robot.Mindmelter = function() {
-  this.health += 5;
+  this.health -= 5;
   this.model = "Mindmelter";
   this.shield += 20;
 };
@@ -154,15 +157,21 @@ Robot.Banshee = function() {
 Robot.Banshee.prototype = new Robot.Psybot();
 
 
+// remove testbot before doing pull request. for testing purposes. duh.
+
+Robot.Player.prototype.setWeapon = function(newWeapon) {
+  this.weapon = newWeapon;
+};
 
 
-let TestBot = new Robot.RockBot();
-
+let TestBot = new Robot.Banshee();
 
 let testLink = () => console.log(TestBot);
 
+
+
 module.exports = {
   Robot,
-  TestBot,
-  testLink
+  testLink,
+  TestBot
 };
