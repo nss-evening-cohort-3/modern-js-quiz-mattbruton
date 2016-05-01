@@ -8,6 +8,7 @@ let WeaponCache = {};
 
 
 WeaponCache.Weapon = function() {
+  this.wepName = null;
   this.damage += 0;
   this.dmgInc += 0;
 };
@@ -22,6 +23,7 @@ WeaponCache.Weapon = function() {
 
 
 WeaponCache.EmpRifle = function() {
+  this.wepName = "E.M.P. Rifle";
   this.damage = Math.floor(Math.random() * 3 + 5);
   this.disableBot = true;
 };
@@ -34,6 +36,7 @@ WeaponCache.EmpRifle.prototype = new WeaponCache.Weapon();
 
 
 WeaponCache.Megazapper = function() {
+  this.wepName = "MegaZapper";
   this.damage = Math.floor(Math.random() * 3 + 10);
   this.disableBot = false;
 };
@@ -45,7 +48,8 @@ WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
    If time permits, will tweak the damage numbers to come up with something balanced. */
 
 
-WeaponCache.ChaosGrenade = function() {
+WeaponCache.ChaosGrenade = () => {
+  this.wepName = "Chaos Grenade";
   this.damage = (1 + Math.floor(Math.random() * 18));
   this.disableBot = false;
 };
@@ -55,7 +59,8 @@ WeaponCache.ChaosGrenade.prototype = new WeaponCache.Weapon();
 
 /* Murder Knife is a place holder weapon. */
 
-WeaponCache.MurderKnife = function() {
+WeaponCache.MurderKnife = () => {
+  this.wepName = "MurderKnife";
   this.damage += Math.floor(Math.random() * 3 + 7);
   this.disableBot = false;
 };
@@ -66,7 +71,8 @@ WeaponCache.MurderKnife.prototype = new WeaponCache.Weapon();
 /* Micro Wave is a place holder weapon. */
 
 
-WeaponCache.MicroWave = function() {
+WeaponCache.MicroWave = () => {
+  this.wepName = "Micro Wave";
   this.damage += Math.floor(Math.random() * 2 + 2);
   this.disableBot = false;
 };
@@ -77,7 +83,8 @@ WeaponCache.MicroWave.prototype = new WeaponCache.Weapon();
 /* Plastic Spork is a place holder weapon. */
 
 
-WeaponCache.PlasticSpork = function() {
+WeaponCache.PlasticSpork = () => {
+  this.wepName = "Plastic Spork";
   this.damage += Math.floor(Math.random() * 2 + 3);
   this.disableBot = false;
 };

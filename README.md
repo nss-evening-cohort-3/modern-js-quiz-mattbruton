@@ -1,9 +1,25 @@
 # Modern JavaScript Developer Quiz
+
 # Robot Battledome
 
-## Setup
+## To Run:
 
-## Instructions
+1.
+2.
+3.
+4.
+5.
+
+## Description:
+
+This project is the Evening Cohort 3 Modern Javascript Developer Quiz at Nashville Software School. The primary goals of the quiz are to test skills involving:
+
+1. Prototypal Inheritance.
+2. ES6 features/syntax.
+3. Ability to interact with the DOM through jQuery. 
+4. Ability to install and utilize tools (ie. Gulp, Browserify, JSHint) that aid in app development.
+
+## Requirements:
 
 ### Basic Requirements
 

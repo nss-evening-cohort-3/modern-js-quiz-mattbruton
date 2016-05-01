@@ -1,6 +1,7 @@
 "use strict";
 
 let weapons = require('./weapons.js');
+let mods = require('./mods.js');
 
 let Robot = {};
 
@@ -12,6 +13,7 @@ let Robot = {};
 Robot.Player = function() {
   this.type = null;
   this.model = null;
+  this.mods = null;
   this.weapon = "Empty Holster";
   this.name = "Malfunctioning Scrapbot";
   this.health = Math.floor(Math.random() * 20 + 80);
@@ -163,6 +165,9 @@ Robot.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 };
 
+Robot.Player.prototype.setMod = function(newMod) {
+  this.mods = newMod;
+};
 
 let TestBot = new Robot.Banshee();
 
