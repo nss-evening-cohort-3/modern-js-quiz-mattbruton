@@ -1,7 +1,5 @@
 "use strict";
 
-let robots = require('./robots.js');
-
 let WeaponCache = {};
 
   ///////////////////////
