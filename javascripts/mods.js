@@ -24,16 +24,28 @@ Armory.Modification = function() {
 
 Armory.Nanobots = function() {
   this.modName = "Restorative Nanobots";
+  this.nanoCheck = true;
+  this.healthBonus = 5;
+  this.damageBonus = 0;
+  this.evasionBonus = 0;
+  this.shieldBonus = 5;
+  this.empCheck = false;
 };
 
 Armory.Nanobots.prototype = new Armory.Modification();
 
 
-/* Armor plating will give the robot a slightly higher base health. */
+/* Reinforced plating will give the robot a slightly higher base health. */
 
 
 Armory.Plating = function() {
-  
+  this.modName = "Reinforced Plating";
+  this.nanoCheck = false;
+  this.healthBonus = 25;
+  this.damageBonus = 0;
+  this.evasionBonus = 0;
+  this.shieldBonus = 10;
+  this.empCheck = false;
 };
 
 Armory.Plating.prototype = new Armory.Modification();
@@ -43,7 +55,13 @@ Armory.Plating.prototype = new Armory.Modification();
 
 
 Armory.Weakness = function() {
-  
+  this.modName = "Find Weakness";
+  this.nanoCheck = false;
+  this.healthBonus = 0;
+  this.damageBonus = 10;
+  this.evasionBonus = 0;
+  this.shieldBonus = 0;
+  this.empCheck = false;
 };
 
 Armory.Weakness.prototype = new Armory.Modification();
@@ -54,7 +72,13 @@ Armory.Weakness.prototype = new Armory.Modification();
 
 
 Armory.Firmware = function() {
-  
+  this.modName = "Updated Firmware";
+  this.nanoCheck = false;
+  this.healthBonus = 10;
+  this.damageBonus = 0;
+  this.evasionBonus = 5;
+  this.shieldBonus = 0;
+  this.empCheck = false;
 };
 
 Armory.Firmware.prototype = new Armory.Modification();
@@ -64,7 +88,13 @@ Armory.Firmware.prototype = new Armory.Modification();
 
 
 Armory.EnhShield = function() {
-  
+  this.modName = "Enhanced Shielding";
+  this.nanoCheck = false;
+  this.healthBonus = 0;
+  this.damageBonus = 0;
+  this.evasionBonus = 3;
+  this.shieldBonus = 25;
+  this.empCheck = false;
 };
 
 Armory.EnhShield.prototype = new Armory.Modification();
@@ -75,7 +105,13 @@ Armory.EnhShield.prototype = new Armory.Modification();
 
 
 Armory.Empathy = function() {
-  
+  this.modName = "Empathy Virus";
+  this.nanoCheck = false;
+  this.healthBonus = 0;
+  this.damageBonus = 0;
+  this.evasionBonus = 0;
+  this.shieldBonus = 5;
+  this.empCheck = true;
 };
 
 Armory.Empathy.prototype = new Armory.Modification();

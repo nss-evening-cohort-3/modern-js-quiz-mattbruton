@@ -14,8 +14,10 @@ Robot.Player = function() {
   this.type = null;
   this.model = null;
   this.mods = null;
+
   this.weapon = "Empty Holster";
   this.name = "Malfunctioning Scrapbot";
+
   this.health = Math.floor(Math.random() * 20 + 80);
   this.shield = 0;
   this.dmgInc = 0;
@@ -163,10 +165,19 @@ Robot.Banshee.prototype = new Robot.Psybot();
 
 Robot.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
+
+  this.damage = newWeapon.damage;
 };
 
 Robot.Player.prototype.setMod = function(newMod) {
   this.mods = newMod;
+
+  this.health += newMod.healthBonus;
+  this.nanoCheck = newMod.nanoCheck;
+  this.dmgInc += newMod.damageBonus;
+  this.evasion += newMod.evasionBonus;
+  this.shield += newMod.shieldBonus;
+  this.empCheck = newMod.empCheck;
 };
 
 let TestBot = new Robot.Banshee();

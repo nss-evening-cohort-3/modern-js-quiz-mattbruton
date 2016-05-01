@@ -7,5 +7,5 @@ let mods = require('./mods.js');
 
 
 robots.testLink();
-robots.TestBot.setWeapon(new weapons.WeaponCache.EmpRifle());
+robots.TestBot.setWeapon(new weapons.WeaponCache.ChaosGrenade());
 robots.TestBot.setMod(new mods.Armory.Nanobots());
