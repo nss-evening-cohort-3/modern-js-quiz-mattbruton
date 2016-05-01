@@ -107,13 +107,13 @@ Robot.RockBot = function() {
 
 Robot.RockBot.prototype = new Robot.Tankbot();
 
-Robot.Tankbot2020 = function() {
+Robot.TankbotPlus = function() {
   this.health += 10;
-  this.model = "Tankbot2020";
+  this.model = "TankbotPlus";
   this.shield += 10;
 };
 
-Robot.Tankbot2020.prototype = new Robot.Tankbot();
+Robot.TankbotPlus.prototype = new Robot.Tankbot();
 
 
 /* Psybots will have stronger shields, take more damage as rounds increase due to their more fragile frames.
