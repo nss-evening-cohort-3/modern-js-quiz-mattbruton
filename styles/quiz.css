@@ -1,0 +1,12 @@
+body {
+  background-color: #c0c0c0;
+}
+
+.botSelect {
+  border: 5px solid white;
+  border-radius: 5px
+}
+
+button {
+  background-color: #f0f0f0;
+}
