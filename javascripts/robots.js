@@ -167,7 +167,8 @@ Robot.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 
   this.empCheck = newWeapon.empCheck;
-  this.damage = newWeapon.damage;
+  this.minDamage = newWeapon.minDamage;
+  this.additionalDamageRange = newWeapon.additionalDamageRange;
 };
 
 Robot.Player.prototype.setMod = function(newMod) {
