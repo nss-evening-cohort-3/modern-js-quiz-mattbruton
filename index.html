@@ -10,28 +10,28 @@
 
   <section id="game-container">
 
-    <section id="title-screen">
+    <section id="title-screen" class="card--title">
       <img src="img/Robot-Battledome.png">
       <p>- click to start -</p>
     </section>
 
-    <section id="playerOne_charSelect" class="container">
+    <section id="playerOne_charSelect" class="p1plate container">
       
       
       <img src="img/Player-One.png">
       
       
-      <div id="playerOne_name_select">
+      <div id="playerOne_name_select" class="card card--nameP1">
         
         <h2>Identify yourself, robot.</h2>
         
         <div class="field">
-          <input type="text" autofocus="true" id="player-name" class="field__textinput">
+          <input type="text" autofocus="true" id="p1-name" class="field__textinput">
         </div>
         
         <div class="card__button pull-right col-sm-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-             next="card--class">
+          <a class="card__link btn"
+             next="card--typeP1">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -40,7 +40,7 @@
       </div>
 
 
-      <div id="playerOne_type_select" class="container">
+      <div id="playerOne_type_select" class="card container card--typeP1">
         
         <h2>Choose your Frame.</h2>
         
@@ -57,16 +57,14 @@
         </div>
         
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            next="card--class">
+          <a class="card__back btn" previous="card--nameP1">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            next="card--class">
+          <a class="card__link btn" next="card--modelP1">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -75,7 +73,7 @@
       </div>
 
 
-      <div id="playerOne_model_select">
+      <div id="playerOne_model_select" class="card card--modelP1">
         
         <h2>Select your Model.</h2>
 
@@ -116,18 +114,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" previous="card--typeP1">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--weaponP1">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -136,7 +130,7 @@
       </div>
 
 
-      <div id="playerOne_weapon_select" class="container">
+      <div id="playerOne_weapon_select" class="card container card--weaponP1">
 
         <h2>choose your Weapon.</h2>
 
@@ -165,18 +159,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" previous="card--modelP1">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--modifyP1">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -184,7 +174,7 @@
 
       </div>
 
-      <div id="playerOne_mod_select" class="container">
+      <div id="playerOne_mod_select" class="card container card--modifyP1">
 
         <h2>Choose your battle modification.</h2>
         
@@ -208,18 +198,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" previous="card--weaponP1">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--confirmP1">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -227,29 +213,27 @@
 
       </div>
       
-      <div id="playerOne_confirm">
+      <div id="playerOne_confirm" class="card card--confirmP1">
+        <div id="playerOne_card"></div>
         <button id="playerOne_confirm">Confirm</button>
-      </div>
-
-      <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+        <div class="card__button col-xs-6">
+            <a class="card__back btn" previous="card--modifyP1">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
+      </div>
 
     
     </section>
 
-    <section id="playerTwo_charSelect" class="container">
+    <section id="playerTwo_charSelect" class="p2plate container">
 
 
       <img src="img/Player-Two.png">
       
       
-      <div id="playerTwo_name_select">
+      <div id="playerTwo_name_select" class="card">
         
         <h2>Identify yourself, robot.</h2>
         
@@ -258,9 +242,7 @@
         </div>
 
         <div class="card__button pull-right col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--class">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -269,7 +251,7 @@
       </div>
 
 
-      <div id="playerTwo_type_select" class="container">
+      <div id="playerTwo_type_select" class="card container">
         
         <h2>Choose a Frame.</h2>
           <div class="typeDrone col-sm-4"
@@ -283,18 +265,14 @@
           </div>
 
           <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" next="card--class">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--class">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -303,7 +281,7 @@
       </div>
 
 
-      <div id="playerTwo_model_select">
+      <div id="playerTwo_model_select" class="card">
         
         <h2>Select a Model.</h2>
 
@@ -344,18 +322,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" next="card--class">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--class">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -365,7 +339,7 @@
       </div>
 
 
-      <div id="playerTwo_weapon_select" class="container">
+      <div id="playerTwo_weapon_select" class="card container">
 
         <h2>Select a Weapon.</h2>
         
@@ -394,18 +368,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" next="card--class">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__link btn" next="card--class">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -413,7 +383,7 @@
 
       </div>
 
-      <div id="playerTwo_mod_select">
+      <div id="playerTwo_mod_select" class="card">
 
         <h2>Select a combat modification.</h2>
         
@@ -437,16 +407,14 @@
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-             next="card--class">
+          <a class="card__back btn" next="card--class">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
         </div>
 
         <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-             next="card--class">
+          <a class="card__link btn" next="card--class">
             <span class="btn__text">next</span>
             <span class="btn__prompt">></span>
           </a>
@@ -454,14 +422,13 @@
 
       </div>
       
-      <div id="playerTwo_confirm">
+      <div id="playerTwo_confirm" class="card">
+        <div id="playerTwo_card"></div>
         <button id="playerTwo_confirm">Confirm</button>
       </div>
 
       <div class="card__button col-xs-6">
-          <a id="setName"class="card__link btn btn--big btn--orange"
-            
-             next="card--class">
+          <a class="card__back btn" previous="card--modifyP2">
             <span class="btn__prompt"><</span>
             <span class="btn__text">prev</span>
           </a>
@@ -469,15 +436,11 @@
 
     </section>
 
-
-    <section id="battledome">
+    <section id="battledome" class="card">
       
-
     </section>
     
   </section>
-
-
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="dist/bundle.js"></script>
