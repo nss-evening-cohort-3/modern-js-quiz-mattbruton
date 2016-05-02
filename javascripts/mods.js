@@ -29,7 +29,7 @@ Armory.Nanobots = function() {
   this.damageBonus = 0;
   this.evasionBonus = 0;
   this.shieldBonus = 5;
-  this.empCheck = false;
+  this.empCheck = 0;
 };
 
 Armory.Nanobots.prototype = new Armory.Modification();
@@ -45,7 +45,7 @@ Armory.Plating = function() {
   this.damageBonus = 0;
   this.evasionBonus = 0;
   this.shieldBonus = 10;
-  this.empCheck = false;
+  this.empCheck = 0;
 };
 
 Armory.Plating.prototype = new Armory.Modification();
@@ -61,7 +61,7 @@ Armory.Weakness = function() {
   this.damageBonus = 10;
   this.evasionBonus = 0;
   this.shieldBonus = 0;
-  this.empCheck = false;
+  this.empCheck = 0;
 };
 
 Armory.Weakness.prototype = new Armory.Modification();
@@ -78,7 +78,7 @@ Armory.Firmware = function() {
   this.damageBonus = 0;
   this.evasionBonus = 5;
   this.shieldBonus = 0;
-  this.empCheck = false;
+  this.empCheck = 0;
 };
 
 Armory.Firmware.prototype = new Armory.Modification();
@@ -94,14 +94,13 @@ Armory.EnhShield = function() {
   this.damageBonus = 0;
   this.evasionBonus = 3;
   this.shieldBonus = 25;
-  this.empCheck = false;
+  this.empCheck = 0;
 };
 
 Armory.EnhShield.prototype = new Armory.Modification();
 
 
-/* Empathy Virus slowly causes the opponent's Robot to lose urge to fight, dealing less damage with each attack
-    as combat goes on.  */
+/* Empathy Virus slowly causes the opponent's Robot to lose urge to fight, eventually stopping for a round.  */
 
 
 Armory.Empathy = function() {
@@ -111,7 +110,7 @@ Armory.Empathy = function() {
   this.damageBonus = 0;
   this.evasionBonus = 0;
   this.shieldBonus = 5;
-  this.empCheck = true;
+  this.empCheck = 1;
 };
 
 Armory.Empathy.prototype = new Armory.Modification();

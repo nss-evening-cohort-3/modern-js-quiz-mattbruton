@@ -4,8 +4,13 @@ let robots = require('./robots.js');
 let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 
+$(document).ready(function() {
+ $("#game-container").click(function() {
+  $("#title-screen").hide();
+ });
+});
 
 
 robots.testLink();
 robots.TestBot.setWeapon(new weapons.WeaponCache.ChaosGrenade());
-robots.TestBot.setMod(new mods.Armory.Nanobots());
+robots.TestBot.setMod(new mods.Armory.Empathy());

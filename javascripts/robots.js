@@ -166,6 +166,7 @@ Robot.Banshee.prototype = new Robot.Psybot();
 Robot.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 
+  this.empCheck = newWeapon.empCheck;
   this.damage = newWeapon.damage;
 };
 
@@ -177,7 +178,7 @@ Robot.Player.prototype.setMod = function(newMod) {
   this.dmgInc += newMod.damageBonus;
   this.evasion += newMod.evasionBonus;
   this.shield += newMod.shieldBonus;
-  this.empCheck = newMod.empCheck;
+  this.empCheck += newMod.empCheck;
 };
 
 let TestBot = new Robot.Banshee();

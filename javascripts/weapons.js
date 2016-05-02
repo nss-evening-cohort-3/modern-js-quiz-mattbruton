@@ -19,13 +19,13 @@ WeaponCache.Weapon = function() {
 ///////////////////////
 
 
-/* EMP Rifle has lower damage, but will add functionality on chance to disable the oppenent bot. */
+/* EMP Rifle has lower damage, but will add functionality on chance to disable the oppenent bot for a round. */
 
 
 WeaponCache.EmpRifle = function() {
   this.wepName = "E.M.P. Rifle";
   this.damage = Math.floor(Math.random() * 3 + 5);
-  this.disableBot = true;
+  this.empCheck = 1;
 };
 
 WeaponCache.EmpRifle.prototype = new WeaponCache.Weapon();
@@ -38,7 +38,7 @@ WeaponCache.EmpRifle.prototype = new WeaponCache.Weapon();
 WeaponCache.Megazapper = function() {
   this.wepName = "MegaZapper";
   this.damage = Math.floor(Math.random() * 3 + 10);
-  this.disableBot = false;
+  this.empCheck = 0;
 };
 
 WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
@@ -51,7 +51,7 @@ WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
 WeaponCache.ChaosGrenade = function() {
   this.wepName = "Chaos Grenade";
   this.damage = (1 + Math.floor(Math.random() * 18));
-  this.disableBot = false;
+  this.empCheck = 0;
 };
 
 WeaponCache.ChaosGrenade.prototype = new WeaponCache.Weapon();
@@ -62,7 +62,7 @@ WeaponCache.ChaosGrenade.prototype = new WeaponCache.Weapon();
 WeaponCache.MurderKnife = function() {
   this.wepName = "MurderKnife";
   this.damage += Math.floor(Math.random() * 3 + 7);
-  this.disableBot = false;
+  this.empCheck = 0;
 };
 
 WeaponCache.MurderKnife.prototype = new WeaponCache.Weapon();
@@ -74,7 +74,7 @@ WeaponCache.MurderKnife.prototype = new WeaponCache.Weapon();
 WeaponCache.MicroWave = function() {
   this.wepName = "Micro Wave";
   this.damage += Math.floor(Math.random() * 2 + 2);
-  this.disableBot = false;
+  this.empCheck = 0;
 };
 
 WeaponCache.MicroWave.prototype = new WeaponCache.Weapon();
@@ -86,7 +86,7 @@ WeaponCache.MicroWave.prototype = new WeaponCache.Weapon();
 WeaponCache.PlasticSpork = function() {
   this.wepName = "Plastic Spork";
   this.damage += Math.floor(Math.random() * 2 + 3);
-  this.disableBot = false;
+  this.empCheck = 0;
 };
 
 WeaponCache.PlasticSpork.prototype = new WeaponCache.Weapon();
