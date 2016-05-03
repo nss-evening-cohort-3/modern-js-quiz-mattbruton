@@ -3,6 +3,7 @@
 let robots = require('./robots.js');
 let weapons = require('./weapons.js');
 let mods = require('./mods.js');
+let select = require('./select.js');
 
 
 $(document).ready(function() {
@@ -34,7 +35,13 @@ $(document).ready(function() {
     $("battledome").show();
   });
   
-  
+
+  /*
+    When the next/confirm button is clicked, the user is taken to the next card in the character creation order. 
+    If the user hasn't typed their name/selected the corresponding field, they will not be taken to the next 
+    screen.
+  */
+
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
@@ -85,12 +92,10 @@ $(document).ready(function() {
         break;
     }
 
-
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
     }
-
 
   });
 
@@ -106,7 +111,8 @@ $(document).ready(function() {
 
 });
 
-
+select.playerTest(select.PlayerOne);
+select.playerTest(select.PlayerTwo);
 
 robots.testLink();
 robots.TestBot.setWeapon(new weapons.WeaponCache.ChaosGrenade());
