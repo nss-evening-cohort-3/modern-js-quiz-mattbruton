@@ -9,22 +9,32 @@ $(document).ready(function() {
   $("#title-screen").show();
 
 
-  $("#title-screen").click(function(e) {
+  $("#title-screen").click(function() {
     $("#title-screen").hide();
     $("#playerOne_charSelect").show();
     $("#playerOne_name_select").show();
   });
 
 
-  $("#p1confirm").click(function(e) {
+  $("#p1confirm").click(function() {
     console.log("you're clicking it");
-    $('#playerOne_charSelect').hide();
-    $('#playerTwo_charSelect').show();
-    $('#playerTwo_name_select').show();
+    $("#playerOne_charSelect").hide();
+    $("#playerTwo_charSelect").show();
+    $("#playerTwo_name_select").show();
+  });
+
+  $("#p2confirm").click(function() {
+    $("#playerTwo_charSelect").hide();
+    $("#playerTwo_name_select").hide();
+  });
+
+  $("#fightbtn").click(function() {
+    console.log("clicking pt 2");
+    $("#enter_battledome").hide();
+    $("battledome").show();
   });
   
-
-
+  
   $(".card__link").click(function(e) {
     var nextCard = $(this).attr("next");
     var moveAlong = false;
@@ -49,10 +59,30 @@ $(document).ready(function() {
       case "card--confirmP1":
         moveAlong = ($("#player1-name").val() !== "");
         break;
-      case "card--P2":
+      case "card--nameP2":
         moveAlong = ($("#player1-name").val() !== "");
         break;
-
+      case "card--typeP2":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--modelP2":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--weaponP2":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--modifyP2":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--confirmP2":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--warning":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
+      case "card--battledome":
+        moveAlong = ($("#player1-name").val() !== "");
+        break;
     }
 
 

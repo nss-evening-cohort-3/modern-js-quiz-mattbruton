@@ -192,8 +192,10 @@
             <button class="card__back btn" previous="card--modifyP1">< prev</button>
         </div>
 
-        <div class="col-xs-6">
-          <button id="p1confirm" class="card__link btn" next="card--P2">confirm</button>
+        <div class="col-xs-6" id="p1confirm">
+          <button 
+         <!--  class="card__link --> 
+           btn" next="card--P2">confirm</button>
         </div>
 
       </div>
@@ -216,13 +218,13 @@
         </div>
 
         <div class="pull-right col-xs-6">
-          <button class="card__link btn" next="card--class">next ></button>
+          <button class="card__link btn" next="card--typeP2">next ></button>
         </div>
 
       </div>
 
 
-      <div id="playerTwo_type_select" class="card container">
+      <div id="playerTwo_type_select" class="card container card--typeP2">
         
         <h2>Choose a Frame.</h2>
           <div class="typeDrone col-sm-4"
@@ -236,17 +238,17 @@
           </div>
 
           <div class="col-xs-6">
-          <button class="card__back btn" next="card--class">< prev</button>
+          <button class="card__back btn" next="card--nameP2">< prev</button>
         </div>
 
         <div class="col-xs-6">
-          <button class="card__link btn" next="card--class">next ></button>
+          <button class="card__link btn" next="card--modelP2">next ></button>
         </div>
         
       </div>
 
 
-      <div id="playerTwo_model_select" class="card">
+      <div id="playerTwo_model_select" class="card card--modelP2">
         
         <h2>Select a Model.</h2>
 
@@ -287,18 +289,18 @@
         </div>
 
         <div class="col-xs-6">
-          <button class="card__back btn" next="card--class">< prev</button>
+          <button class="card__back btn" next="card--typeP2">< prev</button>
         </div>
 
         <div class="col-xs-6">
-          <button class="card__link btn" next="card--class">next ></button>
+          <button class="card__link btn" next="card--weaponP2">next ></button>
         </div>
 
 
       </div>
 
 
-      <div id="playerTwo_weapon_select" class="card container">
+      <div id="playerTwo_weapon_select" class="card container card--weaponP2">
 
         <h2>Select a Weapon.</h2>
         
@@ -327,16 +329,16 @@
         </div>
 
         <div class="col-xs-6">
-          <button class="card__back btn" next="card--class">< prev</button>
+          <button class="card__back btn" next="card--modelP2">< prev</button>
         </div>
 
         <div class="col-xs-6">
-          <button class="card__link btn" next="card--class">next ></button>
+          <button class="card__link btn" next="card--modifyP2">next ></button>
         </div>
 
       </div>
 
-      <div id="playerTwo_mod_select" class="card">
+      <div id="playerTwo_mod_select" class="card card--modifyP2">
 
         <h2>Select a combat modification.</h2>
         
@@ -360,27 +362,37 @@
         </div>
 
         <div class="col-xs-6">
-          <button class="card__back btn" next="card--class">< prev</button>
+          <button class="card__back btn" next="card--weaponP2">< prev</button>
         </div>
 
         <div class="col-xs-6">
-          <button class="card__link btn" next="card--class">next ></button>
+          <button class="card__link btn" next="card--confirmP2">next ></button>
         </div>
 
       </div>
       
-      <div id="playerTwo_confirm" class="card">
-        <div id="playerTwo_card"></div>
-        <button id="playerTwo_confirm">Confirm</button>
-      </div>
-
-      <div class="col-xs-6">
+      <div id="playerTwo_confirm" class="card card--confirmP2">
+        
+        <div class="col-xs-6">
           <button class="card__back btn" previous="card--modifyP2">< prev</button>
         </div>
 
+        <div id="playerTwo_card"></div>
+
+        <button id="p2confirm" class="card__link btn" next="card--warning">confirm</button>
+      </div>
+
     </section>
 
-    <section id="battledome" class="card">
+    <section>
+
+      <div id="enter_battledome" class="card card--warning">
+        <button id="fightbtn" class="card__link btn" next="card--battledome">fight</button>
+      </div>
+
+    </section>
+
+    <section id="battledome" class="card card--battledome">
       
     </section>
     
