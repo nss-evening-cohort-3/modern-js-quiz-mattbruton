@@ -164,7 +164,7 @@ Robot.Banshee = function() {
 Robot.Banshee.prototype = new Robot.Psybot();
 
 
-// remove testbot before doing pull request. for testing purposes. duh.
+/* Functions for setting weapons, modifications, types, and models to robot players */
 
 Robot.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
@@ -199,9 +199,12 @@ Robot.Player.prototype.setModel = function(newModel) {
   this.shield += this.model.shieldBonus;
   this.evasion += this.model.evasionBonus;
 
-
   return this.model;
 };
+
+
+/* Test Robots for dev use */
+
 
 let TestBot = new Robot.Banshee();
 
@@ -215,6 +218,7 @@ console.log(PlayerOne.health);
 console.log(PlayerTwo);
 console.log(PlayerOne);
 
+/* Export this business */
 
 module.exports = {
   Robot,
