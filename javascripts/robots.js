@@ -177,6 +177,7 @@ Robot.Player.prototype.setWeapon = function(newWeapon) {
 Robot.Player.prototype.setMod = function(newMod) {
   this.mods = newMod;
 
+  this.additionalDamageRange += newMod.damageBonus;
   this.health += newMod.healthBonus;
   this.nanoCheck = newMod.nanoCheck;
   this.evasion += newMod.evasionBonus;
@@ -211,6 +212,7 @@ let PlayerTwo = new Robot.Player();
 PlayerOne.setType("Drone");
 PlayerOne.setModel("LittleBiter");
 PlayerOne.setWeapon(new weapons.WeaponCache.MurderKnife());
+PlayerOne.setMod(new mods.Armory.Weakness())
 
 console.log(PlayerOne.health);
 console.log(PlayerTwo);
@@ -220,7 +222,6 @@ console.log(PlayerOne);
 
 module.exports = {
   Robot,
-  TestBot,
   PlayerOne,
   PlayerTwo
 };

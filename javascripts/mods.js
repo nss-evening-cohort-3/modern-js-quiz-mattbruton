@@ -8,9 +8,15 @@ let Armory = {};
 
 
 Armory.Modification = function() {
-  this.mods = null;
+  this.modName = null;
+  this.nanoCheck = null;
+  this.healthBonus = 0;
+  this.damageBonus = 0;
+  this.evasionBonus = 0;
+  this.shieldBonus = 0;
+  this.empCheck = 0;
 
-  return this.mods;
+  return this.modName;
 };
 
 
@@ -24,93 +30,99 @@ Armory.Modification = function() {
 
 Armory.Nanobots = function() {
   this.modName = "Restorative Nanobots";
-  this.nanoCheck = true;
-  this.healthBonus = 5;
-  this.damageBonus = 0;
-  this.evasionBonus = 0;
-  this.shieldBonus = 5;
-  this.empCheck = 0;
+
+  this.nanoCheck += 1;
+  this.healthBonus += 5;
+  this.damageBonus += 0;
+  this.evasionBonus += 0;
+  this.shieldBonus += 5;
+  this.empCheck += 0;
 };
 
 Armory.Nanobots.prototype = new Armory.Modification();
 
 
-/* Reinforced plating will give the robot a slightly higher base health. */
+/* Reinforced plating will give the robot a slightly higher base health, minor shield. */
 
 
 Armory.Plating = function() {
   this.modName = "Reinforced Plating";
-  this.nanoCheck = false;
-  this.healthBonus = 25;
-  this.damageBonus = 0;
-  this.evasionBonus = 0;
-  this.shieldBonus = 10;
-  this.empCheck = 0;
+
+  this.nanoCheck += 0;
+  this.healthBonus += 25;
+  this.damageBonus += 0;
+  this.evasionBonus += 0;
+  this.shieldBonus += 10;
+  this.empCheck += 0;
 };
 
 Armory.Plating.prototype = new Armory.Modification();
 
 
-/* Find Weakness will look for flaws in opponent's frame, slight % increase in damage. */
+/* Find Weakness will look for flaws in opponent's frame, slight increase in random damage. */
 
 
 Armory.Weakness = function() {
   this.modName = "Find Weakness";
-  this.nanoCheck = false;
-  this.healthBonus = 0;
-  this.damageBonus = 10;
-  this.evasionBonus = 0;
-  this.shieldBonus = 0;
-  this.empCheck = 0;
+
+  this.nanoCheck += 0;
+  this.healthBonus += 0;
+  this.damageBonus += 20;
+  this.evasionBonus += 0;
+  this.shieldBonus += 0;
+  this.empCheck += 0;
 };
 
 Armory.Weakness.prototype = new Armory.Modification();
 
 
 /* Updated Firmware resolves a bug which weakened the robot's attack anticipation calculations, increases 
-   Robot's evasion total slightly. */
+   Robot's evasion total slightly, minor health. */
 
 
 Armory.Firmware = function() {
   this.modName = "Updated Firmware";
-  this.nanoCheck = false;
-  this.healthBonus = 10;
-  this.damageBonus = 0;
-  this.evasionBonus = 5;
-  this.shieldBonus = 0;
-  this.empCheck = 0;
+
+  this.nanoCheck += 0;
+  this.healthBonus += 10;
+  this.damageBonus += 0;
+  this.evasionBonus += 5;
+  this.shieldBonus += 0;
+  this.empCheck += 0;
 };
 
 Armory.Firmware.prototype = new Armory.Modification();
 
 
-/* Enhance Shields grants the Robot a shield at the beginning of combat. */
+/* Enhance Shields grants the Robot a shield at the beginning of combat, minor evasion. */
 
 
 Armory.EnhShield = function() {
   this.modName = "Enhanced Shielding";
-  this.nanoCheck = false;
-  this.healthBonus = 0;
-  this.damageBonus = 0;
-  this.evasionBonus = 3;
-  this.shieldBonus = 25;
-  this.empCheck = 0;
+
+  this.nanoCheck += 0;
+  this.healthBonus += 0;
+  this.damageBonus += 0;
+  this.evasionBonus += 3;
+  this.shieldBonus += 25;
+  this.empCheck += 0;
 };
 
 Armory.EnhShield.prototype = new Armory.Modification();
 
 
-/* Empathy Virus slowly causes the opponent's Robot to lose urge to fight, eventually stopping for a round.  */
+/* Empathy Virus slowly causes the opponent's Robot to lose urge to fight, eventually stopping for a round, minor shield.  */
 
 
 Armory.Empathy = function() {
   this.modName = "Empathy Virus";
-  this.nanoCheck = false;
-  this.healthBonus = 0;
-  this.damageBonus = 0;
-  this.evasionBonus = 0;
-  this.shieldBonus = 5;
-  this.empCheck = 1;
+
+  this.nanoCheck += 0;
+  this.healthBonus += 0;
+  this.damageBonus += 0;
+  this.evasionBonus += 0;
+  this.shieldBonus += 5;
+  this.empCheck += 1;
 };
 
 Armory.Empathy.prototype = new Armory.Modification();
