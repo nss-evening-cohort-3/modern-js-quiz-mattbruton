@@ -6,28 +6,34 @@ let mods = require('./mods.js');
 let select = require('./select.js');
 
 
+
 $(document).ready(function() {
+
+  let playerCount = 0;
+  let pickModel;
+
   $("#title-screen").show();
 
 
   $("#title-screen").click(function() {
     $("#title-screen").hide();
-    $("#playerOne_charSelect").show();
-    $("#playerOne_name_select").show();
+    $("#charSelect").show();
+    $("#name_select").show();
   });
 
 
-  $("#p1confirm").click(function() {
+  $("#confirm").click(function() {
     console.log("you're clicking it");
-    $("#playerOne_charSelect").hide();
-    $("#playerTwo_charSelect").show();
-    $("#playerTwo_name_select").show();
+    playerCount++;
+    $("#charSelect").hide();
+    $("#charSelect").show();
+    $("#name_select").show();
   });
 
-  $("#p2confirm").click(function() {
-    $("#playerTwo_charSelect").hide();
-    $("#playerTwo_name_select").hide();
-  });
+  // $("#confirm").click(function() {
+  //   $("#playerTwo_charSelect").hide();
+  //   $("#playerTwo_name_select").hide();
+  // });
 
   $("#fightbtn").click(function() {
     console.log("clicking pt 2");
@@ -36,6 +42,25 @@ $(document).ready(function() {
   });
   
 
+  $('#player-name').keyup(function(){
+    if (playerCount < 1) {
+      robots.PlayerOne.name = $(this).val();
+    } else {
+      robots.PlayerTwo.name = $(this).val();
+    }
+  });
+
+  $('#model_select').click(function(e) {
+    if (playerCount < 1) {
+      // if (e.target == "Drone"){
+        pickModel = e.target.id;
+        robots.PlayerOne.setModel(pickModel);
+        console.log(robots.PlayerOne);
+      // }
+      // robots.PlayerOne.setType(e.target.id());
+    // }
+    }
+});
   /*
     When the next/confirm button is clicked, the user is taken to the next card in the character creation order. 
     If the user hasn't typed their name/selected the corresponding field, they will not be taken to the next 
@@ -49,47 +74,47 @@ $(document).ready(function() {
 
     switch (nextCard) {
       case "card--name":
-        moveAlong = ($("#player1-name").val() !== "");
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--typeP1":
-        moveAlong = ($("#player1-name").val() !== "");
+      case "card--type":
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--modelP1":
-        moveAlong = ($("#player1-name").val() !== "");
+      case "card--model":
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--weaponP1":
-        moveAlong = ($("#player1-name").val() !== "");
+      case "card--weapon":
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--modifyP1":
-        moveAlong = ($("#player1-name").val() !== "");
+      case "card--modify":
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--confirmP1":
-        moveAlong = ($("#player1-name").val() !== "");
+      case "card--confirm":
+        moveAlong = ($("#player-name").val() !== "");
         break;
-      case "card--nameP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--typeP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--modelP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--weaponP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--modifyP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--confirmP2":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--warning":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
-      case "card--battledome":
-        moveAlong = ($("#player1-name").val() !== "");
-        break;
+      // case "card--nameP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--typeP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--modelP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--weaponP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--modifyP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--confirmP2":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--warning":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
+      // case "card--battledome":
+      //   moveAlong = ($("#player1-name").val() !== "");
+      //   break;
     }
 
     if (moveAlong) {
@@ -111,9 +136,7 @@ $(document).ready(function() {
 
 });
 
-select.playerTest(select.PlayerOne);
-select.playerTest(select.PlayerTwo);
+robots.PlayerOne.setWeapon(new weapons.WeaponCache.ChaosGrenade());
 
-robots.testLink();
 robots.TestBot.setWeapon(new weapons.WeaponCache.ChaosGrenade());
 robots.TestBot.setMod(new mods.Armory.Empathy());

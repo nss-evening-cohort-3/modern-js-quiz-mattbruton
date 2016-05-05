@@ -18,7 +18,7 @@ Robot.Player = function() {
   this.weapon = "Empty Holster";
   this.name = "Malfunctioning Scrapbot";
 
-  this.health = Math.floor(Math.random() * 20 + 80);
+  this.health = 70;
   this.shield = 0;
   this.dmgInc = 0;
   this.evasion = 0;
@@ -36,9 +36,10 @@ Robot.Player = function() {
 
 
 Robot.Drone = function() {
-  this.health -= 10;
   this.type = "Drone";
-  this.evasion += 10;
+  this.health += this.healthBonus = 0;
+  this.shield += this.shieldBonus = 0;
+  this.evasion += this.evasionBonus = 10;
 };
 
 Robot.Drone.prototype = new Robot.Player();
@@ -50,25 +51,25 @@ Robot.Drone.prototype = new Robot.Player();
 
 
 Robot.ShadowStrike = function() {
-  this.health += 5;
+  this.health += this.healthBonus = 5;
   this.model = "ShadowStrike";
-  this.evasion += 10;
+  this.evasion += this.evasionBonus = 5;
 };
 
 Robot.ShadowStrike.prototype = new Robot.Drone();
 
 Robot.LittleBiter = function() {
-  this.health -= 2;
+  this.healthBonus = 15;
   this.model = "LittleBiter";
-  this.dmgInc += 5;
+  this.evasion += this.evasionBonus = 0;
 };
 
 Robot.LittleBiter.prototype = new Robot.Drone();
 
 Robot.BulletShooter = function() {
-  this.health -= 5;
+  this.health += this.healthBonus = 0;
   this.model = "BulletShooter";
-  this.evasion += 5;
+  this.evasion += this.evasionBonus = 10;
 };
 
 Robot.BulletShooter.prototype = new Robot.Drone();
@@ -79,8 +80,10 @@ Robot.BulletShooter.prototype = new Robot.Drone();
 
 
 Robot.Tankbot = function() {
-  this.health += 10;
   this.type = "Tankbot";
+  this.health += this.healthBonus = 40;
+  this.shield += this.shieldBonus = 0;
+  this.evasion += this.evasionBonus = 0;
 };
 
 Robot.Tankbot.prototype = new Robot.Player();
@@ -92,25 +95,25 @@ Robot.Tankbot.prototype = new Robot.Player();
 
 
 Robot.Tobor = function() {
-  this.health += 5;
+  this.health += this.healthBonus = 15;
   this.model = "T.O.B.O.R.";
-  this.evasion += 5;
+  this.evasion += this.evasionBonus = 5;
 };
 
 Robot.Tobor.prototype = new Robot.Tankbot();
 
 Robot.RockBot = function() {
-  this.health += 25;
+  this.health += this.healthBonus = 25;
   this.model = "RockBot";
-  this.shield += 10;
+  this.shield += this.shieldBonus = 10;
 };
 
 Robot.RockBot.prototype = new Robot.Tankbot();
 
 Robot.TankbotPlus = function() {
-  this.health += 10;
+  this.health += this.healthBonus = 15;
   this.model = "TankbotPlus";
-  this.shield += 10;
+  this.shield += this.shieldBonus = 20;
 };
 
 Robot.TankbotPlus.prototype = new Robot.Tankbot();
@@ -121,10 +124,10 @@ Robot.TankbotPlus.prototype = new Robot.Tankbot();
 
 
 Robot.Psybot = function() {
-  this.health -= 10;
   this.type = "Psybot";
-  this.shield += Math.floor(Math.random() * 20 + 5);
-  this.evasion += 5;
+  this.health += this.healthBonus = 10;
+  this.shield += this.shieldBonus = Math.floor(Math.random() * 5 + 20);
+  this.evasion += this.evasionBonus = 5;
 };
 
 Robot.Psybot.prototype = new Robot.Player();
@@ -136,26 +139,26 @@ Robot.Psybot.prototype = new Robot.Player();
 
 
 Robot.Mindmelter = function() {
-  this.health -= 5;
+  this.health += this.healthBonus = 5;
   this.model = "Mindmelter";
-  this.shield += 20;
+  this.shield += this.shieldBonus = 20;
 };
 
 Robot.Mindmelter.prototype = new Robot.Psybot();
 
 Robot.Brainstorm = function() {
-  this.health -= 5;
+  this.health += this.healthBonus = 5;
   this.model = "Brainstorm";
-  this.shield += 15;
-  this.evasion += 5;
+  this.shield += this.shieldBonus = 15;
+  this.evasion += this.evasionBonus = 5;
 };
 
 Robot.Brainstorm.prototype = new Robot.Psybot();
 
 Robot.Banshee = function() {
-  this.health -= 10;
+  this.health += this.healthBonus = 10;
   this.model = "Banshee";
-  this.shield += 25;
+  this.health += this.shieldBonus = 25;
 };
 
 Robot.Banshee.prototype = new Robot.Psybot();
@@ -176,20 +179,46 @@ Robot.Player.prototype.setMod = function(newMod) {
 
   this.health += newMod.healthBonus;
   this.nanoCheck = newMod.nanoCheck;
-  this.dmgInc += newMod.damageBonus;
   this.evasion += newMod.evasionBonus;
   this.shield += newMod.shieldBonus;
   this.empCheck += newMod.empCheck;
 };
 
+Robot.Player.prototype.setType = function(newType) {
+  this.type = new Robot[newType];
+  this.health += this.type.healthBonus;
+  this.shield += this.type.shieldBonus;
+  this.evasion += this.type.evasionBonus;
+
+  return this.type;
+};
+
+Robot.Player.prototype.setModel = function(newModel) {
+  this.model = new Robot[newModel];
+  this.health += this.model.healthBonus;
+  this.shield += this.model.shieldBonus;
+  this.evasion += this.model.evasionBonus;
+
+
+  return this.model;
+};
+
 let TestBot = new Robot.Banshee();
 
-let testLink = () => console.log(TestBot);
+let PlayerOne = new Robot.Player();
+let PlayerTwo = new Robot.Player();
+// PlayerOne.setModel("");
+PlayerOne.setType("Drone");
+PlayerOne.setModel("LittleBiter");
 
+console.log(PlayerOne.health);
+console.log(PlayerTwo);
+console.log(PlayerOne);
 
 
 module.exports = {
   Robot,
-  testLink,
-  TestBot
+  TestBot,
+  PlayerOne,
+  PlayerTwo
 };
