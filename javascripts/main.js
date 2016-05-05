@@ -135,8 +135,3 @@ $(document).ready(function() {
   });
 
 });
-
-robots.PlayerOne.setWeapon(new weapons.WeaponCache.ChaosGrenade());
-
-robots.TestBot.setWeapon(new weapons.WeaponCache.ChaosGrenade());
-robots.TestBot.setMod(new mods.Armory.Empathy());

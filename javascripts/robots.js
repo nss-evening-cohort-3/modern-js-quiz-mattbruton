@@ -205,14 +205,12 @@ Robot.Player.prototype.setModel = function(newModel) {
 
 /* Test Robots for dev use */
 
-
-let TestBot = new Robot.Banshee();
-
 let PlayerOne = new Robot.Player();
 let PlayerTwo = new Robot.Player();
 // PlayerOne.setModel("");
 PlayerOne.setType("Drone");
 PlayerOne.setModel("LittleBiter");
+PlayerOne.setWeapon(new weapons.WeaponCache.MurderKnife());
 
 console.log(PlayerOne.health);
 console.log(PlayerTwo);
