@@ -14,6 +14,8 @@ Robot.Player = function() {
   this.type = null;
   this.model = null;
   this.mods = null;
+  this.minDamage = 0;
+  this.additionalDamageRange = 0;
 
   this.weapon = "Empty Holster";
   this.name = "Malfunctioning Scrapbot";

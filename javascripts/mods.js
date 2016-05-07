@@ -67,7 +67,7 @@ Armory.Weakness = function() {
 
   this.nanoCheck += 0;
   this.healthBonus += 0;
-  this.damageBonus += 20;
+  this.damageBonus += 4;
   this.evasionBonus += 0;
   this.shieldBonus += 0;
   this.empCheck += 0;
