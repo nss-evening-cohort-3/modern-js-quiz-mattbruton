@@ -46,10 +46,18 @@ let evasion = (player) => {
 
 let victoryCheck = (firstPlayer, secondPlayer) => {
   let victoryString = "";
-  if (firstPlayer.health <= 0) 
-    victoryString += `${secondPlayer} has defeated ${firstPlayer}!`; 
-  if (secondPlayer.health <= 0)
-    victoryString += `${firstPlayer} has defeated ${secondPlayer}!`; 
+
+  if (firstPlayer.health && secondPlayer.health <= 0) {
+    victoryString += "Both bots are scrapped!";
+    $('#combatText').html(`${victoryString}`); 
+  } else if (firstPlayer.health <= 0) {
+    victoryString += `${secondPlayer.name} has defeated ${firstPlayer.name}!`;
+    $('#combatText').html(`${victoryString}`); 
+  } else if (secondPlayer.health <= 0) {
+    victoryString += `${firstPlayer.name} has defeated ${secondPlayer.name}!`; 
+    $('#combatText').html(`${victoryString}`);
+  }
+  
 };
 
 

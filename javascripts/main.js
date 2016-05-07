@@ -122,7 +122,7 @@ is hidden, and the weapon selection screen is shown. */
     combat.shieldCheck(robots.PlayerTwo);
     string.robotToCard(robots.PlayerOne, "#playerOneCard");
     string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
-    
+    combat.victoryCheck(robots.PlayerOne, robots.PlayerTwo);
     console.log("p2 evasion", combat.evasion(robots.PlayerTwo));
   });
 
