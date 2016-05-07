@@ -206,15 +206,11 @@ Robot.Player.prototype.setModel = function(newModel) {
 };
 
 
-/* Test Robots for dev use */
-
 let PlayerOne = new Robot.Player();
+PlayerOne.name = "Player One";
 let PlayerTwo = new Robot.Player();
-// PlayerOne.setModel("");
-// PlayerOne.setType("Drone");
-// PlayerOne.setModel("LittleBiter");
-// PlayerOne.setWeapon(new weapons.WeaponCache.MurderKnife());
-// PlayerOne.setMod(new mods.Armory.Weakness())
+PlayerTwo.name = "Player Two";
+
 
 console.log(PlayerOne.health);
 console.log(PlayerTwo);

@@ -5,6 +5,7 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let select = require('./select.js');
 let combat = require('./combat.js');
+let string = require('./string.js');
 
 /* characterCreationView sets which elements are visable on load and upon switching between Player One and 
 Player Two in the creation process */
@@ -103,6 +104,8 @@ is hidden, and the weapon selection screen is shown. */
       $('#robot_creation').hide();
       $('#playerHeader').hide();
       $('#battledome').show();
+      string.robotToCard(robots.PlayerOne, "#playerOneCard");
+      string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
     }
     console.log(playerCount);
 
@@ -110,10 +113,13 @@ is hidden, and the weapon selection screen is shown. */
 
   $('#battleStartBtn').click(function() {
     console.log("2", robots.PlayerTwo);
+
     combat.attack(robots.PlayerOne, robots.PlayerTwo);
     combat.attack(robots.PlayerTwo, robots.PlayerOne);
-    console.log("p1 health", robots.PlayerOne.health);
-    console.log("p2 health", robots.PlayerTwo.health);
-  })
+    string.robotToCard(robots.PlayerOne, "#playerOneCard");
+    string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
+    
+    console.log("p2 evasion", combat.evasion(robots.PlayerTwo));
+  });
 
 });

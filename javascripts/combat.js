@@ -2,6 +2,7 @@
 let robots = require('./robots.js');
 let weapons = require('./weapons.js');
 let mods = require('./mods.js');
+let string = require('./string.js');
 
 let disableCount = 0;
 
@@ -13,12 +14,22 @@ let damage = (player) => {
 };
 
 let attack = (offensivePlayer, defensivePlayer) => {
-  defensivePlayer.health -= damage(offensivePlayer);
+  
+  let dmgNumber = damage(offensivePlayer);
+
+  defensivePlayer.health -= dmgNumber;
+  string.robotsCombatText(offensivePlayer, defensivePlayer, dmgNumber);
+
   return defensivePlayer.health;
 };
 
-let evasion = () => {
+let evasion = (player) => {
+  let evasionCheck = false;
+  if (player.evasion >= Math.floor(Math.random() * 100)) {
+    evasionCheck = true;
+  }
 
+  return evasionCheck;
 };
 
 let victoryCheck = (firstPlayer, secondPlayer) => {
@@ -29,14 +40,10 @@ let victoryCheck = (firstPlayer, secondPlayer) => {
     victoryString += `${firstPlayer} has defeated ${secondPlayer}!`; 
 };
 
-let playerToCard = (offensivePlayer, defensivePlayer) => {
-
-};
 
 module.exports = {
   damage,
   attack,
   evasion,
-  victoryCheck,
-  playerToCard
+  victoryCheck
 };
