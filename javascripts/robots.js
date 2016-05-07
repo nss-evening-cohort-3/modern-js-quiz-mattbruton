@@ -209,10 +209,10 @@ Robot.Player.prototype.setModel = function(newModel) {
 let PlayerOne = new Robot.Player();
 let PlayerTwo = new Robot.Player();
 // PlayerOne.setModel("");
-PlayerOne.setType("Drone");
-PlayerOne.setModel("LittleBiter");
-PlayerOne.setWeapon(new weapons.WeaponCache.MurderKnife());
-PlayerOne.setMod(new mods.Armory.Weakness())
+// PlayerOne.setType("Drone");
+// PlayerOne.setModel("LittleBiter");
+// PlayerOne.setWeapon(new weapons.WeaponCache.MurderKnife());
+// PlayerOne.setMod(new mods.Armory.Weakness())
 
 console.log(PlayerOne.health);
 console.log(PlayerTwo);

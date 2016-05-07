@@ -5,133 +5,87 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let select = require('./select.js');
 
+let nextPlayer = () => {
+  $('#model_select').hide();
+  $('#weapon_select').hide();
+  $('#mod_select').hide();
+  $('#droneModels').hide();
+  $('#tankbotModels').hide();
+  $('#psybotModels').hide();
+  $('#type_select').show();
+}
 
+let playerCount = 0;
+let player;
+
+let robotCheck = () => {
+  if (playerCount <= 0) {
+      player = robots.PlayerOne;
+    } else {
+      player = robots.PlayerTwo;
+    }
+};
+
+robotCheck();
 
 $(document).ready(function() {
 
-  let playerCount = 0;
-  let pickModel;
 
-  $("#title-screen").show();
+  console.log(player);
 
 
-  $("#title-screen").click(function() {
-    $("#title-screen").hide();
-    $("#charSelect").show();
-    $("#name_select").show();
-  });
+  nextPlayer();
 
+  $('.typebtn').click(function(event) {
 
-  $("#confirm").click(function() {
-    console.log("you're clicking it");
-    playerCount++;
-    $("#charSelect").hide();
-    $("#charSelect").show();
-    $("#name_select").show();
-  });
+    $('#type_select').hide();
+    player.setType(event.target.id);
 
-  // $("#confirm").click(function() {
-  //   $("#playerTwo_charSelect").hide();
-  //   $("#playerTwo_name_select").hide();
-  // });
+    $('#model_select').show();
+    $('#model_buttons').show();
 
-  $("#fightbtn").click(function() {
-    console.log("clicking pt 2");
-    $("#enter_battledome").hide();
-    $("battledome").show();
-  });
-  
-
-  $('#player-name').keyup(function(){
-    if (playerCount < 1) {
-      robots.PlayerOne.name = $(this).val();
+    if (event.target.id == "Drone") {
+      $('#droneModels').show();
+    } else if (event.target.id == "Tankbot") {
+      $('#tankbotModels').show();
     } else {
-      robots.PlayerTwo.name = $(this).val();
+      $('#psybotModels').show();
     }
   });
 
-  $('#model_select').click(function(e) {
-    if (playerCount < 1) {
-      // if (e.target == "Drone"){
-        pickModel = e.target.id;
-        robots.PlayerOne.setModel(pickModel);
-        console.log(robots.PlayerOne);
-      // }
-      // robots.PlayerOne.setType(e.target.id());
-    // }
-    }
-});
-  /*
-    When the next/confirm button is clicked, the user is taken to the next card in the character creation order. 
-    If the user hasn't typed their name/selected the corresponding field, they will not be taken to the next 
-    screen.
-  */
+  
+  $('.modelbtn').click(function(event) {
 
-  $(".card__link").click(function(e) {
-    var nextCard = $(this).attr("next");
-    var moveAlong = false;
-
-
-    switch (nextCard) {
-      case "card--name":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--type":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--model":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--modify":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      case "card--confirm":
-        moveAlong = ($("#player-name").val() !== "");
-        break;
-      // case "card--nameP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--typeP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--modelP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--weaponP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--modifyP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--confirmP2":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--warning":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-      // case "card--battledome":
-      //   moveAlong = ($("#player1-name").val() !== "");
-      //   break;
-    }
-
-    if (moveAlong) {
-      $(".card").hide();
-      $("." + nextCard).show();
-    }
-
+    $('#model_select').hide();
+    player.setModel(event.target.id);
+    $('#weapon_select').show();
   });
 
-  /*
-    When the back button clicked, move back a view
-   */
+  $('.wepbtn').click(function(event) {
+    $('#weapon_select').hide();
+    player.setWeapon(new weapons.WeaponCache[event.target.id]());
 
-  $(".card__back").click(function(e) {
-    var previousCard = $(this).attr("previous");
-    $(".card").hide();
-    $("." + previousCard).show();
+    $('#mod_select').show();
+  });
+
+  $('.modbtn').click(function(event) {
+    player.setMod(new mods.Armory[event.target.id]());
+    console.log("2", robots.PlayerTwo);
+    console.log("1", robots.PlayerOne)
+    nextPlayer();
+    playerCount++;
+
+    if (playerCount >= 0) {
+    $("h1.first").replaceWith('<h1>Player Two</h1>');
+    }
+
+    robotCheck();
+
+    if (playerCount == 2) {
+      $('#robot_creation').hide();
+      $('#playerHeader').hide();
+    }
+    console.log(playerCount);
   });
 
 });
