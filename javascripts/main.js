@@ -23,13 +23,16 @@ let characterCreationView = () => {
 
 /* playerCount is used by robotCheck function for switching which Player is being augmented and which 
 header is displayed when the user clicks a button in the modify_select element */
+
 let playerCount = 0;
 
 /* player variable changes in the robotCheck function based on previous variable playerCount's value */
+
 let player;
 
 /* conditional statement that is run at the end of the first character creation process to begin storing values
 for next player */
+
 let robotCheck = () => {
   if (playerCount <= 0) {
       player = robots.PlayerOne;
@@ -113,9 +116,10 @@ is hidden, and the weapon selection screen is shown. */
 
   $('#battleStartBtn').click(function() {
     console.log("2", robots.PlayerTwo);
-
     combat.attack(robots.PlayerOne, robots.PlayerTwo);
     combat.attack(robots.PlayerTwo, robots.PlayerOne);
+    combat.shieldCheck(robots.PlayerOne);
+    combat.shieldCheck(robots.PlayerTwo);
     string.robotToCard(robots.PlayerOne, "#playerOneCard");
     string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
     

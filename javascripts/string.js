@@ -10,6 +10,7 @@ let robotToCard = (player, playerElement) => {
   let playerString = "";
   playerString += `<h1>${player.name}</h1>`;
   playerString += `<h4>Health: ${player.health}</h4>`;
+  playerString += `<h4>Shield: ${player.shield}</h4>`;
   playerString += `<h4>Type: ${player.type.type}</h4>`;
   playerString += `<h4>Model: ${player.model.model}</h4>`;
   $(playerElement).html(`${playerString}`);

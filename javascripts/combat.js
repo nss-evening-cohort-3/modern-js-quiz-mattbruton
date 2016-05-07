@@ -13,14 +13,26 @@ let damage = (player) => {
   return totalDamage;
 };
 
+let shieldCheck = (player) => {
+  if (player.shield < 0) {
+    player.shield = 0;
+  }
+  return player;
+};
+
 let attack = (offensivePlayer, defensivePlayer) => {
-  
+
   let dmgNumber = damage(offensivePlayer);
 
+  if (defensivePlayer.shield > 0) {
+    defensivePlayer.shield -= dmgNumber;
+   } else {
   defensivePlayer.health -= dmgNumber;
+  
+  }
   string.robotsCombatText(offensivePlayer, defensivePlayer, dmgNumber);
-
-  return defensivePlayer.health;
+  // return defensivePlayer.shield;
+  return defensivePlayer;
 };
 
 let evasion = (player) => {
@@ -45,5 +57,6 @@ module.exports = {
   damage,
   attack,
   evasion,
-  victoryCheck
+  victoryCheck,
+  shieldCheck
 };
