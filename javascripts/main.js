@@ -3,7 +3,6 @@
 let robots = require('./robots.js');
 let weapons = require('./weapons.js');
 let mods = require('./mods.js');
-let select = require('./select.js');
 let combat = require('./combat.js');
 let string = require('./string.js');
 

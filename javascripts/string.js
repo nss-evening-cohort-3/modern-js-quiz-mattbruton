@@ -5,6 +5,14 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let combat = require('./combat.js');
 
+let robotEmpathyString = (offensivePlayer, defensivePlayer) => {
+  let empathyString = `<h5>${offensivePlayer.name} hugs ${defensivePlayer.name} instead of attacking! Gross!</h5>`;
+    if ($('#combatText').children().length > 7) {
+        $('#combatText').children('h5:first').remove();
+    }
+    $('#combatText').append(empathyString);
+};
+
 let robotDodgeString = (offensivePlayer, defensivePlayer) => {
     let dodgeString = `<h5>${defensivePlayer.name} dodges ${offensivePlayer.name}'s attack!</h5>`;
     if ($('#combatText').children().length > 7) {
@@ -34,6 +42,7 @@ let robotsCombatText = (offensivePlayer, defensivePlayer, damage) => {
 };
 
 module.exports = {
+    robotEmpathyString,
     robotToCard,
     robotsCombatText,
     robotDodgeString

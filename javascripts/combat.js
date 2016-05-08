@@ -20,12 +20,23 @@ let shieldCheck = (player) => {
     return player;
 };
 
+let empathyCheck = (player) => {
+    let empathy = false;
+    if (player.empCheck > Math.floor(Math.random() * 10)) {
+      empathy = true;
+    }
+    return empathy;
+};
 
 let attack = (offensivePlayer, defensivePlayer) => {
 
     let dmgNumber = damage(offensivePlayer);
 
-    if (evasion(defensivePlayer) === true) {
+
+      if (empathyCheck(defensivePlayer) === true) {
+        string.robotEmpathyString(offensivePlayer, defensivePlayer);
+      }
+      else if (evasion(defensivePlayer) === true) {
         string.robotDodgeString(offensivePlayer, defensivePlayer);
     } else if (defensivePlayer.shield > 0) {
         defensivePlayer.shield -= dmgNumber;
@@ -69,5 +80,6 @@ module.exports = {
     attack,
     evasion,
     victoryCheck,
-    shieldCheck
+    shieldCheck,
+    empathyCheck
 };
