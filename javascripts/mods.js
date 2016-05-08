@@ -2,26 +2,26 @@
 
 let Armory = {};
 
-  ///////////////////////
- //     Base Mod      //
+///////////////////////
+//     Base Mod      //
 ///////////////////////
 
 
 Armory.Modification = function() {
-  this.modName = null;
-  this.nanoCheck = null;
-  this.healthBonus = 0;
-  this.damageBonus = 0;
-  this.evasionBonus = 0;
-  this.shieldBonus = 0;
-  this.empCheck = 0;
+    this.modName = null;
+    this.nanoCheck = null;
+    this.healthBonus = 0;
+    this.damageBonus = 0;
+    this.evasionBonus = 0;
+    this.shieldBonus = 0;
+    this.empCheck = 0;
 
-  return this.modName;
+    return this.modName;
 };
 
 
-  ///////////////////////
- //    Specific  Mods //
+///////////////////////
+//    Specific  Mods //
 ///////////////////////
 
 
@@ -29,14 +29,14 @@ Armory.Modification = function() {
 
 
 Armory.Nanobots = function() {
-  this.modName = "Restorative Nanobots";
+    this.modName = "Restorative Nanobots";
 
-  this.nanoCheck += 1;
-  this.healthBonus += 5;
-  this.damageBonus += 0;
-  this.evasionBonus += 0;
-  this.shieldBonus += 5;
-  this.empCheck += 0;
+    this.nanoCheck += 1;
+    this.healthBonus += 5;
+    this.damageBonus += 0;
+    this.evasionBonus += 0;
+    this.shieldBonus += 5;
+    this.empCheck += 0;
 };
 
 Armory.Nanobots.prototype = new Armory.Modification();
@@ -46,14 +46,14 @@ Armory.Nanobots.prototype = new Armory.Modification();
 
 
 Armory.Plating = function() {
-  this.modName = "Reinforced Plating";
+    this.modName = "Reinforced Plating";
 
-  this.nanoCheck += 0;
-  this.healthBonus += 25;
-  this.damageBonus += 0;
-  this.evasionBonus += 0;
-  this.shieldBonus += 10;
-  this.empCheck += 0;
+    this.nanoCheck += 0;
+    this.healthBonus += 25;
+    this.damageBonus += 0;
+    this.evasionBonus += 0;
+    this.shieldBonus += 10;
+    this.empCheck += 0;
 };
 
 Armory.Plating.prototype = new Armory.Modification();
@@ -63,14 +63,14 @@ Armory.Plating.prototype = new Armory.Modification();
 
 
 Armory.Weakness = function() {
-  this.modName = "Find Weakness";
+    this.modName = "Find Weakness";
 
-  this.nanoCheck += 0;
-  this.healthBonus += 0;
-  this.damageBonus += 4;
-  this.evasionBonus += 0;
-  this.shieldBonus += 0;
-  this.empCheck += 0;
+    this.nanoCheck += 0;
+    this.healthBonus += 0;
+    this.damageBonus += 4;
+    this.evasionBonus += 0;
+    this.shieldBonus += 0;
+    this.empCheck += 0;
 };
 
 Armory.Weakness.prototype = new Armory.Modification();
@@ -81,14 +81,14 @@ Armory.Weakness.prototype = new Armory.Modification();
 
 
 Armory.Firmware = function() {
-  this.modName = "Updated Firmware";
+    this.modName = "Updated Firmware";
 
-  this.nanoCheck += 0;
-  this.healthBonus += 10;
-  this.damageBonus += 0;
-  this.evasionBonus += 5;
-  this.shieldBonus += 0;
-  this.empCheck += 0;
+    this.nanoCheck += 0;
+    this.healthBonus += 10;
+    this.damageBonus += 0;
+    this.evasionBonus += 5;
+    this.shieldBonus += 0;
+    this.empCheck += 0;
 };
 
 Armory.Firmware.prototype = new Armory.Modification();
@@ -98,14 +98,14 @@ Armory.Firmware.prototype = new Armory.Modification();
 
 
 Armory.EnhShield = function() {
-  this.modName = "Enhanced Shielding";
+    this.modName = "Enhanced Shielding";
 
-  this.nanoCheck += 0;
-  this.healthBonus += 0;
-  this.damageBonus += 0;
-  this.evasionBonus += 3;
-  this.shieldBonus += 25;
-  this.empCheck += 0;
+    this.nanoCheck += 0;
+    this.healthBonus += 0;
+    this.damageBonus += 0;
+    this.evasionBonus += 3;
+    this.shieldBonus += 25;
+    this.empCheck += 0;
 };
 
 Armory.EnhShield.prototype = new Armory.Modification();
@@ -115,18 +115,18 @@ Armory.EnhShield.prototype = new Armory.Modification();
 
 
 Armory.Empathy = function() {
-  this.modName = "Empathy Virus";
+    this.modName = "Empathy Virus";
 
-  this.nanoCheck += 0;
-  this.healthBonus += 0;
-  this.damageBonus += 0;
-  this.evasionBonus += 0;
-  this.shieldBonus += 5;
-  this.empCheck += 1;
+    this.nanoCheck += 0;
+    this.healthBonus += 0;
+    this.damageBonus += 0;
+    this.evasionBonus += 0;
+    this.shieldBonus += 5;
+    this.empCheck += 1;
 };
 
 Armory.Empathy.prototype = new Armory.Modification();
 
 module.exports = {
-  Armory
+    Armory
 };

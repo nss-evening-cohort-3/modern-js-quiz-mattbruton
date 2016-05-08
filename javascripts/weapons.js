@@ -2,21 +2,21 @@
 
 let WeaponCache = {};
 
-  ///////////////////////
- //     Base Weapon   //
+///////////////////////
+//     Base Weapon   //
 ///////////////////////
 
 
 WeaponCache.Weapon = function() {
-  this.wepName = null;
-  this.minDamage = 0;
-  this.additionalDamageRange = 0;
-  this.empCheck = 0;
+    this.wepName = null;
+    this.minDamage = 0;
+    this.additionalDamageRange = 0;
+    this.empCheck = 0;
 };
 
 
-  ///////////////////////
- //  Modified Weapons //
+///////////////////////
+//  Modified Weapons //
 ///////////////////////
 
 
@@ -24,10 +24,10 @@ WeaponCache.Weapon = function() {
 
 
 WeaponCache.EmpRifle = function() {
-  this.wepName = "E.M.P. Rifle";
-  this.minDamage += 5;
-  this.additionalDamageRange += 3; 
-  this.empCheck += 1;
+    this.wepName = "E.M.P. Rifle";
+    this.minDamage += 5;
+    this.additionalDamageRange += 3;
+    this.empCheck += 1;
 };
 
 WeaponCache.EmpRifle.prototype = new WeaponCache.Weapon();
@@ -38,10 +38,10 @@ WeaponCache.EmpRifle.prototype = new WeaponCache.Weapon();
 
 
 WeaponCache.Megazapper = function() {
-  this.wepName = "MegaZapper";
-  this.minDamage += 10;
-  this.additionalDamageRange += 3;
-  this.empCheck += 0;
+    this.wepName = "MegaZapper";
+    this.minDamage += 10;
+    this.additionalDamageRange += 3;
+    this.empCheck += 0;
 };
 
 WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
@@ -52,10 +52,10 @@ WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
 
 
 WeaponCache.ChaosGrenade = function() {
-  this.wepName = "Chaos Grenade";
-  this.minDamage += 1;
-  this.additionalDamageRange += 18;
-  this.empCheck += 0;
+    this.wepName = "Chaos Grenade";
+    this.minDamage += 1;
+    this.additionalDamageRange += 18;
+    this.empCheck += 0;
 };
 
 WeaponCache.ChaosGrenade.prototype = new WeaponCache.Weapon();
@@ -64,10 +64,10 @@ WeaponCache.ChaosGrenade.prototype = new WeaponCache.Weapon();
 /* Murder Knife is a place holder weapon. */
 
 WeaponCache.MurderKnife = function() {
-  this.wepName = "MurderKnife";
-  this.minDamage += 7;
-  this.additionalDamageRange += 3;
-  this.empCheck += 0;
+    this.wepName = "MurderKnife";
+    this.minDamage += 7;
+    this.additionalDamageRange += 3;
+    this.empCheck += 0;
 };
 
 WeaponCache.MurderKnife.prototype = new WeaponCache.Weapon();
@@ -77,10 +77,10 @@ WeaponCache.MurderKnife.prototype = new WeaponCache.Weapon();
 
 
 WeaponCache.MicroWave = function() {
-  this.wepName = "Micro Wave";
-  this.minDamage += 3;
-  this.additionalDamageRange += 7;
-  this.empCheck += 0;
+    this.wepName = "Micro Wave";
+    this.minDamage += 3;
+    this.additionalDamageRange += 7;
+    this.empCheck += 0;
 };
 
 WeaponCache.MicroWave.prototype = new WeaponCache.Weapon();
@@ -90,14 +90,14 @@ WeaponCache.MicroWave.prototype = new WeaponCache.Weapon();
 
 
 WeaponCache.PlasticSpork = function() {
-  this.wepName = "Plastic Spork";
-  this.minDamage += 3;
-  this.additionalDamageRange += 2;
-  this.empCheck += 0;
+    this.wepName = "Plastic Spork";
+    this.minDamage += 3;
+    this.additionalDamageRange += 2;
+    this.empCheck += 0;
 };
 
 WeaponCache.PlasticSpork.prototype = new WeaponCache.Weapon();
 
 module.exports = {
-  WeaponCache
+    WeaponCache
 };
