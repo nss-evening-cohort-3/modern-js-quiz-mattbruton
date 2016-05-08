@@ -114,6 +114,7 @@ is hidden, and the weapon selection screen is shown. */
 
   });
 
+
   $('#battleStartBtn').click(function() {
     console.log("2", robots.PlayerTwo);
     combat.attack(robots.PlayerOne, robots.PlayerTwo);

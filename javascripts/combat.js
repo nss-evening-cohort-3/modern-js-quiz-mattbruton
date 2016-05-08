@@ -20,20 +20,22 @@ let shieldCheck = (player) => {
   return player;
 };
 
+
 let attack = (offensivePlayer, defensivePlayer) => {
 
   let dmgNumber = damage(offensivePlayer);
 
-  if (defensivePlayer.shield > 0) {
+  if (evasion(defensivePlayer) === true){
+   string.robotDodgeString(offensivePlayer, defensivePlayer);
+   } else if (defensivePlayer.shield > 0) {
     defensivePlayer.shield -= dmgNumber;
+    string.robotsCombatText(offensivePlayer, defensivePlayer, dmgNumber);
    } else {
-  defensivePlayer.health -= dmgNumber;
-  
-  }
-  string.robotsCombatText(offensivePlayer, defensivePlayer, dmgNumber);
-  // return defensivePlayer.shield;
-  return defensivePlayer;
+   defensivePlayer.health -= dmgNumber;
+   string.robotsCombatText(offensivePlayer, defensivePlayer, dmgNumber);
+   }
 };
+
 
 let evasion = (player) => {
   let evasionCheck = false;
@@ -44,10 +46,11 @@ let evasion = (player) => {
   return evasionCheck;
 };
 
+
 let victoryCheck = (firstPlayer, secondPlayer) => {
   let victoryString = "";
 
-  if (firstPlayer.health && secondPlayer.health <= 0) {
+  if (firstPlayer.health <= 0 && secondPlayer.health <= 0) {
     victoryString += "Both bots are scrapped!";
     $('#combatText').html(`${victoryString}`); 
   } else if (firstPlayer.health <= 0) {

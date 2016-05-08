@@ -39,7 +39,7 @@ Robot.Player = function() {
 
 Robot.Drone = function() {
   this.type = "Drone";
-  this.health += this.healthBonus = 0;
+  this.health += this.healthBonus = 20;
   this.shield += this.shieldBonus = 0;
   this.evasion += this.evasionBonus = 10;
 };
@@ -53,37 +53,37 @@ Robot.Drone.prototype = new Robot.Player();
 
 
 Robot.ShadowStrike = function() {
-  this.health += this.healthBonus = 5;
+  this.health += this.healthBonus = 25;
   this.model = "ShadowStrike";
-  this.evasion += this.evasionBonus = 5;
+  this.evasion += this.evasionBonus = 15;
 };
 
 Robot.ShadowStrike.prototype = new Robot.Drone();
 
 Robot.LittleBiter = function() {
-  this.healthBonus = 15;
+  this.healthBonus = 35;
   this.model = "LittleBiter";
-  this.evasion += this.evasionBonus = 0;
+  this.evasion += this.evasionBonus = 10;
 };
 
 Robot.LittleBiter.prototype = new Robot.Drone();
 
 Robot.BulletShooter = function() {
-  this.health += this.healthBonus = 0;
+  this.health += this.healthBonus = 10;
   this.model = "BulletShooter";
-  this.evasion += this.evasionBonus = 10;
+  this.evasion += this.evasionBonus = 20;
 };
 
 Robot.BulletShooter.prototype = new Robot.Drone();
 
 
-/* Tankbots have slightly higher health than the other two types. No Bonus to evasion since they have heavier and 
-   sturdier frames than other types. */
+/* Tankbots have slightly higher health than the other two types. No Bonus to evasion (execpt tobor)
+  since they have heavier and sturdier frames than other types. */
 
 
 Robot.Tankbot = function() {
   this.type = "Tankbot";
-  this.health += this.healthBonus = 40;
+  this.health += this.healthBonus = 50;
   this.shield += this.shieldBonus = 0;
   this.evasion += this.evasionBonus = 0;
 };
@@ -97,23 +97,23 @@ Robot.Tankbot.prototype = new Robot.Player();
 
 
 Robot.Tobor = function() {
-  this.health += this.healthBonus = 15;
+  this.health += this.healthBonus = 35;
   this.model = "T.O.B.O.R.";
-  this.evasion += this.evasionBonus = 5;
+  this.evasion += this.evasionBonus = 10;
 };
 
 Robot.Tobor.prototype = new Robot.Tankbot();
 
 Robot.RockBot = function() {
-  this.health += this.healthBonus = 25;
+  this.health += this.healthBonus = 30;
   this.model = "RockBot";
-  this.shield += this.shieldBonus = 10;
+  this.shield += this.shieldBonus = 15;
 };
 
 Robot.RockBot.prototype = new Robot.Tankbot();
 
 Robot.TankbotPlus = function() {
-  this.health += this.healthBonus = 15;
+  this.health += this.healthBonus = 25;
   this.model = "TankbotPlus";
   this.shield += this.shieldBonus = 20;
 };
@@ -121,15 +121,15 @@ Robot.TankbotPlus = function() {
 Robot.TankbotPlus.prototype = new Robot.Tankbot();
 
 
-/* Psybots will have stronger shields, take more damage as rounds increase due to their more fragile frames.
-   Slight bonus to evading attacks based on their ability to calculate opponents next move. */
+/* Psybots will have stronger shields.Slight bonus to evading attacks based on their
+ ability to calculate opponents next move. */
 
 
 Robot.Psybot = function() {
   this.type = "Psybot";
   this.health += this.healthBonus = 10;
   this.shield += this.shieldBonus = Math.floor(Math.random() * 5 + 20);
-  this.evasion += this.evasionBonus = 5;
+  this.evasion += this.evasionBonus = 10;
 };
 
 Robot.Psybot.prototype = new Robot.Player();
@@ -143,7 +143,7 @@ Robot.Psybot.prototype = new Robot.Player();
 Robot.Mindmelter = function() {
   this.health += this.healthBonus = 5;
   this.model = "Mindmelter";
-  this.shield += this.shieldBonus = 20;
+  this.shield += this.shieldBonus = 30;
 };
 
 Robot.Mindmelter.prototype = new Robot.Psybot();
@@ -151,7 +151,7 @@ Robot.Mindmelter.prototype = new Robot.Psybot();
 Robot.Brainstorm = function() {
   this.health += this.healthBonus = 5;
   this.model = "Brainstorm";
-  this.shield += this.shieldBonus = 15;
+  this.shield += this.shieldBonus = 25;
   this.evasion += this.evasionBonus = 5;
 };
 
@@ -160,7 +160,7 @@ Robot.Brainstorm.prototype = new Robot.Psybot();
 Robot.Banshee = function() {
   this.health += this.healthBonus = 10;
   this.model = "Banshee";
-  this.health += this.shieldBonus = 25;
+  this.health += this.shieldBonus = 35;
 };
 
 Robot.Banshee.prototype = new Robot.Psybot();

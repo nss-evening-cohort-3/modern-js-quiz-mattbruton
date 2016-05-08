@@ -5,6 +5,13 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let combat = require('./combat.js');
 
+let robotDodgeString = (offensivePlayer, defensivePlayer) => {
+  let dodgeString = `<h5>${defensivePlayer.name} dodges ${offensivePlayer.name}'s attack!</h5>`;
+  if ($('#combatText').children().length > 7) {
+    $('#combatText').children('h5:first').remove();
+  }
+  $('#combatText').append(dodgeString);
+};
 
 let robotToCard = (player, playerElement) => {
   let playerString = "";
@@ -28,5 +35,6 @@ let robotsCombatText = (offensivePlayer, defensivePlayer, damage) => {
 
 module.exports = {
   robotToCard,
-  robotsCombatText
+  robotsCombatText,
+  robotDodgeString
 };
