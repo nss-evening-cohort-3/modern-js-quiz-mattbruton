@@ -25,8 +25,8 @@ WeaponCache.Weapon = function() {
 
 WeaponCache.EmpRifle = function() {
     this.wepName = "E.M.P. Rifle";
-    this.minDamage += 8;
-    this.additionalDamageRange += 7;
+    this.minDamage += 9;
+    this.additionalDamageRange += 10;
     this.empCheck += 0;
 };
 
@@ -54,7 +54,7 @@ WeaponCache.Megazapper.prototype = new WeaponCache.Weapon();
 WeaponCache.ChaosGrenade = function() {
     this.wepName = "Chaos Grenade";
     this.minDamage += 1;
-    this.additionalDamageRange += 18;
+    this.additionalDamageRange += 24;
     this.empCheck += 0;
 };
 

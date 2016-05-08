@@ -16,8 +16,14 @@
     <div id="type_select" class="container">
 
       <h3>Select your Robot's Frame</h3>
+
+      <div id="frameDescription" class="description">
+        <h5>Drone: Lower base health, heightend ability to avoid attacks.</h5>
+        <h5>Tankbot: Higher base health than other frames.</h5>
+        <h5>Psybot: Midrange health, Psybots by default have a defensive shield.</h5>
+      </div>
      
-      <div id="type_buttons" class="container">
+      <div id="type_buttons" class="col-sm-12 container">
         
         <button id="Drone" class="btn typebtn">Drone</button>
         <button id="Tankbot" class="btn typebtn">Tankbot</button>
@@ -32,16 +38,37 @@
       <h3>Select your Robot's Model</h3>
      
       <div id="model_buttons" class="container">
+
+        <div id="droneDescription" class="description">
+          <h5>ShadowStrike:  Medium Health Bonus, Medium Evasion Bonus</h5>
+          <h5>LittleBiter:  Highest Health Bonus, Lowest Evasion Bonus</h5>
+          <h5>BulletShooter:  Lowest Drone Health Bonus, Highest Evasion Bonus</h5>
+        </div>
+
         <div id="droneModels">
           <button id="ShadowStrike" class="btn modelbtn">ShadowStrike</button>
           <button id="LittleBiter" class="btn modelbtn">LittleBiter</button>
           <button id="BulletShooter" class="btn modelbtn">BulletShooter</button>
         </div>
+
+        <div id="tankbotDescription" class="description">
+          <h5>T.O.B.O.R.: Small Evasion Bonus, Large Health Bonus</h5>
+          <h5>RockBot: Large Health Bonus, Medium Shield Bonus</h5>
+          <h5>TankbotPlus: Medium Health Bonus, Large Shield Bonus</h5>
+        </div>
+
         <div id="tankbotModels">
           <button id="Tobor" class="btn modelbtn">Tobor</button>
           <button id="RockBot" class="btn modelbtn">RockBot</button>
           <button id="TankbotPlus" class="btn modelbtn">TankbotPlus</button>
         </div>
+
+        <div id="psybotDescription" class="description">
+          <h5>Mindmelter: Medium Health Bonus, Medium Shield Bonus</h5>
+          <h5>Brainstorm: Lower Health and Shield Bonuses, Small Evasion Bonus</h5>
+          <h5>Banshee: Small Health Bonus, High Shield Bonus</h5>
+        </div>
+
         <div id="psybotModels">
           <button id="Mindmelter" class="btn modelbtn">Mindmelter</button>
           <button id="Brainstorm" class="btn modelbtn">Brainstorm</button>
@@ -57,6 +84,15 @@
       <h3>Select your Robot's Weapon</h3>
      
       <div id="weapon_buttons" class="container">
+
+        <div id="weaponDescription" class="description container">
+          <h5 class="col-sm-6">E.M.P. Rifle - Damage: 9-19 </h5>
+          <h5 class="col-sm-6">Megazapper - Damage: 12-15</h5>
+          <h5 class="col-sm-6">Chaos Grenade - Damage: 1-25</h5>
+          <h5 class="col-sm-6">Murder Knife - Damage: 9-12</h5>
+          <h5 class="col-sm-6">MicroWave - Damage: 11-12</h5>
+          <h5 class="col-sm-6">Plastic Spork - Damage: 3-6</h5>
+        </div>
         
         <button id="EmpRifle" class="btn wepbtn">Emp Rifle</button>
         <button id="Megazapper" class="btn wepbtn">Megazapper</button>
@@ -74,6 +110,15 @@
       <h3>Select your Robot's Modification</h3>
      
       <div id="mod_buttons" class="container">
+
+        <div id="modDescription" class="description container">
+          <h5 class="col-sm-6">Repairing Nanobots: Heal each round of combat. </h5>
+          <h5 class="col-sm-6">Enhance Plating: Bonus to Robot's Health.</h5>
+          <h5 class="col-sm-6">Find Weakness: Bonus to Robot's Minimum Damage.</h5>
+          <h5 class="col-sm-6">Updated Firmware: Increases Robot's Evasion Bonus.</h5>
+          <h5 class="col-sm-6">Enhance Shields: Bonus to Robot's Shields.</h5>
+          <h5 class="col-sm-6">Empathy Virus: Make your opponent feel... sometimes.</h5>
+        </div>
         
         <button id="Nanobots" class="btn modbtn">Repairing Nanobots</button>
         <button id="Plating" class="btn modbtn">Enhanced Plating</button>

@@ -22,7 +22,6 @@ Robot.Player = function() {
 
     this.health = 70;
     this.shield = 0;
-    this.dmgInc = 0;
     this.evasion = 0;
 };
 
@@ -33,8 +32,7 @@ Robot.Player = function() {
 
 
 /* Drones serve the "Agility" type role in this version of Robot Battledome. Slightly lower base health, but heightened
-   ability to avoid opponent attacks. They will also have the ability to do more damage as the rounds go on, exploiting
-   flaws in their opponent's frame. */
+   ability to avoid opponent attacks. */
 
 
 Robot.Drone = function() {
@@ -53,7 +51,7 @@ Robot.Drone.prototype = new Robot.Player();
 
 
 Robot.ShadowStrike = function() {
-    this.health += this.healthBonus = 25;
+    this.health += this.healthBonus = 30;
     this.model = "ShadowStrike";
     this.evasion += this.evasionBonus = 15;
 };
@@ -61,7 +59,7 @@ Robot.ShadowStrike = function() {
 Robot.ShadowStrike.prototype = new Robot.Drone();
 
 Robot.LittleBiter = function() {
-    this.healthBonus = 35;
+    this.healthBonus = 40;
     this.model = "LittleBiter";
     this.evasion += this.evasionBonus = 10;
 };
@@ -69,7 +67,7 @@ Robot.LittleBiter = function() {
 Robot.LittleBiter.prototype = new Robot.Drone();
 
 Robot.BulletShooter = function() {
-    this.health += this.healthBonus = 10;
+    this.health += this.healthBonus = 20;
     this.model = "BulletShooter";
     this.evasion += this.evasionBonus = 20;
 };
@@ -97,17 +95,17 @@ Robot.Tankbot.prototype = new Robot.Player();
 
 
 Robot.Tobor = function() {
-    this.health += this.healthBonus = 35;
+    this.health += this.healthBonus = 30;
     this.model = "T.O.B.O.R.";
-    this.evasion += this.evasionBonus = 10;
+    this.evasion += this.evasionBonus = 7;
 };
 
 Robot.Tobor.prototype = new Robot.Tankbot();
 
 Robot.RockBot = function() {
-    this.health += this.healthBonus = 30;
+    this.health += this.healthBonus = 40;
     this.model = "RockBot";
-    this.shield += this.shieldBonus = 15;
+    this.shield += this.shieldBonus = 25;
 };
 
 Robot.RockBot.prototype = new Robot.Tankbot();
@@ -115,7 +113,7 @@ Robot.RockBot.prototype = new Robot.Tankbot();
 Robot.TankbotPlus = function() {
     this.health += this.healthBonus = 25;
     this.model = "TankbotPlus";
-    this.shield += this.shieldBonus = 20;
+    this.shield += this.shieldBonus = 35;
 };
 
 Robot.TankbotPlus.prototype = new Robot.Tankbot();
@@ -141,7 +139,7 @@ Robot.Psybot.prototype = new Robot.Player();
 
 
 Robot.Mindmelter = function() {
-    this.health += this.healthBonus = 5;
+    this.health += this.healthBonus = 25;
     this.model = "Mindmelter";
     this.shield += this.shieldBonus = 30;
 };
@@ -149,7 +147,7 @@ Robot.Mindmelter = function() {
 Robot.Mindmelter.prototype = new Robot.Psybot();
 
 Robot.Brainstorm = function() {
-    this.health += this.healthBonus = 5;
+    this.health += this.healthBonus = 15;
     this.model = "Brainstorm";
     this.shield += this.shieldBonus = 25;
     this.evasion += this.evasionBonus = 5;
@@ -160,7 +158,7 @@ Robot.Brainstorm.prototype = new Robot.Psybot();
 Robot.Banshee = function() {
     this.health += this.healthBonus = 10;
     this.model = "Banshee";
-    this.health += this.shieldBonus = 35;
+    this.health += this.shieldBonus = 55;
 };
 
 Robot.Banshee.prototype = new Robot.Psybot();

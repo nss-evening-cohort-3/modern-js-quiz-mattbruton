@@ -16,6 +16,9 @@ let characterCreationView = () => {
     $('#droneModels').hide();
     $('#tankbotModels').hide();
     $('#psybotModels').hide();
+    $('#droneDescription').hide();
+    $('#tankbotDescription').hide();
+    $('#psybotDescription').hide();
     $('#battledome').hide();
     $('#type_select').show();
 };
@@ -61,10 +64,13 @@ $(document).ready(function() {
         $('#model_buttons').show();
 
         if (event.target.id == "Drone") {
+            $('#droneDescription').show();
             $('#droneModels').show();
         } else if (event.target.id == "Tankbot") {
+            $('#tankbotDescription').show();
             $('#tankbotModels').show();
         } else {
+            $('#psybotDescription').show();
             $('#psybotModels').show();
         }
     });
