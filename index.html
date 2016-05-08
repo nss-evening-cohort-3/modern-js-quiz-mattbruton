@@ -8,397 +8,105 @@
 </head>
 <body>
 
-  <section id="game-container">
+  <section id="game_container">
+    <div id="playerHeader">
+      <h1 class="first">Player One</h1>
+    </div>
+  <div id="robot_creation">
+    <div id="type_select" class="container">
 
-    <section id="title-screen" class="card--title">
-      <img src="img/Robot-Battledome.png">
-      <p>- click to start -</p>
-    </section>
-
-    <section id="playerOne_charSelect" class="p1plate container">
-      
-      
-      <img src="img/Player-One.png">
-      
-      
-      <div id="playerOne_name_select" class="card card--nameP1">
+      <h3>Select your Robot's Frame</h3>
+     
+      <div id="type_buttons" class="container">
         
-        <h2>Identify yourself, robot.</h2>
-        
-        <div class="field">
-          <input type="text" autofocus="true" id="player1-name" class="field__textinput">
-        </div>
-        
-        <div class="pull-right col-sm-6">
-          <button class="card__link btn" next="card--typeP1">next ></button>
-        </div>
-
+        <button id="Drone" class="btn typebtn">Drone</button>
+        <button id="Tankbot" class="btn typebtn">Tankbot</button>
+        <button id="Psybot" class="btn typebtn">Psybot</button>
+      
       </div>
 
+    </div>
 
-      <div id="playerOne_type_select" class="card container card--typeP1">
-        
-        <h2>Choose your Frame.</h2>
-        
-        <div class="typeDrone col-sm-4"
-          <a><img src="img/tankbot.png" class="botSelect"></a>
+    <div id="model_select" class="container">
+      
+      <h3>Select your Robot's Model</h3>
+     
+      <div id="model_buttons" class="container">
+        <div id="droneModels">
+          <button id="ShadowStrike" class="btn modelbtn">ShadowStrike</button>
+          <button id="LittleBiter" class="btn modelbtn">LittleBiter</button>
+          <button id="BulletShooter" class="btn modelbtn">BulletShooter</button>
         </div>
-
-        <div class="typeTankBot col-sm-4"
-          <a><img src="img/tankbot.png" class="botSelect"></a>
+        <div id="tankbotModels">
+          <button id="Tobor" class="btn modelbtn">Tobor</button>
+          <button id="RockBot" class="btn modelbtn">RockBot</button>
+          <button id="TankbotPlus" class="btn modelbtn">TankbotPlus</button>
         </div>
-
-        <div class="typePsyBot col-sm-4"
-          <a><img src="img/tankbot.png" class="botSelect"></a>
+        <div id="psybotModels">
+          <button id="Mindmelter" class="btn modelbtn">Mindmelter</button>
+          <button id="Brainstorm" class="btn modelbtn">Brainstorm</button>
+          <button id="Banshee" class="btn modelbtn">Banshee</button>
         </div>
-        
-        <div class="col-xs-6">
-          <button class="card__back btn" previous="card--nameP1">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--modelP1">next ></button>
-        </div>
-        
+      
       </div>
 
+    </div>
 
-      <div id="playerOne_model_select" class="card card--modelP1">
+    <div id="weapon_select" class="container">
+
+      <h3>Select your Robot's Weapon</h3>
+     
+      <div id="weapon_buttons" class="container">
         
-        <h2>Select your Model.</h2>
-
-        <div id="ShadowStrike" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="LittleBiter" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="BulletShooter" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Tobor" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="RockBot" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="TankbotPlus" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="MindMelter" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Brainstorm" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Banshee" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" previous="card--typeP1">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--weaponP1">next ></button>
-        </div>
-
-      </div>
-
-
-      <div id="playerOne_weapon_select" class="card container card--weaponP1">
-
-        <h2>choose your Weapon.</h2>
-
-        <div id="wepEmp" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMega" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepChaos" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMurder" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMicro" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepSpork" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" previous="card--modelP1">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--modifyP1">next ></button>
-        </div>
-
-      </div>
-
-      <div id="playerOne_mod_select" class="card container card--modifyP1">
-
-        <h2>Choose your battle modification.</h2>
-        
-        <div id="modNano" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modPlate" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modWeak" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modFirm" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modShield" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modEmp" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" previous="card--weaponP1">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--confirmP1">next ></button>
-        </div>
-
+        <button id="EmpRifle" class="btn wepbtn">Emp Rifle</button>
+        <button id="Megazapper" class="btn wepbtn">Megazapper</button>
+        <button id="ChaosGrenade" class="btn wepbtn">Chaos Grenade</button>
+        <button id="MurderKnife" class="btn wepbtn">Murder Knife</button>
+        <button id="MicroWave" class="btn wepbtn">MicroWave</button>
+        <button id="PlasticSpork" class="btn wepbtn">Plastic Spork</button>
+      
       </div>
       
-      <div id="playerOne_confirm" class="card card--confirmP1">
-        <div id="playerOne_card"></div>
+    </div>
 
-        <div class="col-xs-6">
-            <button class="card__back btn" previous="card--modifyP1">< prev</button>
-        </div>
+    <div id="mod_select" class="container">
 
-        <div class="col-xs-6" id="p1confirm">
-          <button 
-         <!--  class="card__link --> 
-           btn" next="card--P2">confirm</button>
-        </div>
+      <h3>Select your Robot's Modification</h3>
+     
+      <div id="mod_buttons" class="container">
+        
+        <button id="Nanobots" class="btn modbtn">Repairing Nanobots</button>
+        <button id="Plating" class="btn modbtn">Enhanced Plating</button>
+        <button id="Weakness" class="btn modbtn">Find Weakness</button>
+        <button id="Firmware" class="btn modbtn">Updated Firmware</button>
+        <button id="EnhShield" class="btn modbtn">Enhanced Shields</button>
+        <button id="Empathy" class="btn modbtn">Empathy Virus</button>
 
       </div>
-
-    
-    </section>
-
-    <section id="playerTwo_charSelect" class="p2plate container card--P2">
-
-
-      <img src="img/Player-Two.png">
-      
-      
-      <div id="playerTwo_name_select" class="card card--nameP2">
-        
-        <h2>Identify yourself, robot.</h2>
-        
-        <div class="field">
-          <input type="text" autofocus="true" id="player-name" class="field__textinput">
-        </div>
-
-        <div class="pull-right col-xs-6">
-          <button class="card__link btn" next="card--typeP2">next ></button>
-        </div>
-
       </div>
+    </div>
 
-
-      <div id="playerTwo_type_select" class="card container card--typeP2">
-        
-        <h2>Choose a Frame.</h2>
-          <div class="typeDrone col-sm-4"
-            <a><img src="img/tankbot.png" class="botSelect"></a>
-          </div>
-          <div class="typeTankBot col-sm-4"
-            <a><img src="img/tankbot.png" class="botSelect"></a>
-          </div>
-          <div class="typePsyBot col-sm-4"
-            <a><img src="img/tankbot.png" class="botSelect"></a>
-          </div>
-
-          <div class="col-xs-6">
-          <button class="card__back btn" next="card--nameP2">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--modelP2">next ></button>
-        </div>
-        
+    <div id="battledome" class="container">
+      <h1>Robot Battledome</h1>
+      <div id="playerOneCard" class="col-sm-6">
+        <p>play1</p>
       </div>
-
-
-      <div id="playerTwo_model_select" class="card card--modelP2">
-        
-        <h2>Select a Model.</h2>
-
-        <div id="ShadowStrike" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="LittleBiter" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="BulletShooter" class="droneModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Tobor" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="RockBot" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="TankbotPlus" class="tankModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="MindMelter" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Brainstorm" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div id="Banshee" class="psyModel col-sm-4">
-          <a><img src="img/tankbot.png" class="botSelect"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" next="card--typeP2">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--weaponP2">next ></button>
-        </div>
-
-
+      <div id="playerTwoCard" class="col-sm-6">
+        <p>play2</p>
       </div>
-
-
-      <div id="playerTwo_weapon_select" class="card container card--weaponP2">
-
-        <h2>Select a Weapon.</h2>
-        
-        <div id="wepEmp" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMega" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepChaos" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMurder" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepMicro" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div id="wepSpork" class="col-xs-2">
-          <a><img src="img/weapon.png" class="wepSel"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" next="card--modelP2">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--modifyP2">next ></button>
-        </div>
-
+      <div id="combatText" class="col-sm-12">
+        <button id="battleStartBtn" class="btn">Begin Battle</button>
       </div>
+    </div>
 
-      <div id="playerTwo_mod_select" class="card card--modifyP2">
-
-        <h2>Select a combat modification.</h2>
-        
-        <div id="modNano" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modPlate" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modWeak" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modFirm" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modShield" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-        <div id="modEmp" class="col-xs-2">
-          <a><img src="img/modimg.png" class="modSel"></a>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__back btn" next="card--weaponP2">< prev</button>
-        </div>
-
-        <div class="col-xs-6">
-          <button class="card__link btn" next="card--confirmP2">next ></button>
-        </div>
-
-      </div>
-      
-      <div id="playerTwo_confirm" class="card card--confirmP2">
-        
-        <div class="col-xs-6">
-          <button class="card__back btn" previous="card--modifyP2">< prev</button>
-        </div>
-
-        <div id="playerTwo_card"></div>
-
-        <button id="p2confirm" class="card__link btn" next="card--warning">confirm</button>
-      </div>
-
-    </section>
-
-    <section>
-
-      <div id="enter_battledome" class="card card--warning">
-        <button id="fightbtn" class="card__link btn" next="card--battledome">fight</button>
-      </div>
-
-    </section>
-
-    <section id="battledome" class="card card--battledome">
-      
-    </section>
-    
   </section>
+ 
+
+
+  
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="dist/bundle.js"></script>
 </body>
 </html>
