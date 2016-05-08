@@ -5,6 +5,14 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let combat = require('./combat.js');
 
+let robotNanobotHealString = (player, nanoHeal) => {
+  let nanoString = `<h5>${player.name} is repaired for ${nanoHeal()} health by their nanobots!`;
+  if ($('#combatText').children().length > 7) {
+        $('#combatText').children('h5:first').remove();
+    }
+    $('#combatText').append(nanoString);
+};
+
 let robotEmpathyString = (offensivePlayer, defensivePlayer) => {
   let empathyString = `<h5>${offensivePlayer.name} hugs ${defensivePlayer.name} instead of attacking! Gross!</h5>`;
     if ($('#combatText').children().length > 7) {
@@ -42,6 +50,7 @@ let robotsCombatText = (offensivePlayer, defensivePlayer, damage) => {
 };
 
 module.exports = {
+    robotNanobotHealString,
     robotEmpathyString,
     robotToCard,
     robotsCombatText,

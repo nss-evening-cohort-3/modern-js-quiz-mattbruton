@@ -4,7 +4,20 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let string = require('./string.js');
 
-let disableCount = 0;
+
+let nanobotCheck = (player) => {
+  let nanoChecker = false;
+  if (player.nanoCheck > 0) {
+    nanoChecker = true;
+  }
+  return nanoChecker;
+};
+
+let nanoHeal = () => {
+  let nanoHealAmount = Math.floor(Math.random() * 5);
+  
+  return nanoHealAmount;
+};
 
 let damage = (player) => {
     let totalDamage = 0;
@@ -22,7 +35,7 @@ let shieldCheck = (player) => {
 
 let empathyCheck = (player) => {
     let empathy = false;
-    if (player.empCheck > Math.floor(Math.random() * 10)) {
+    if (player.empCheck > Math.floor(Math.random() * 8)) {
       empathy = true;
     }
     return empathy;
@@ -31,11 +44,16 @@ let empathyCheck = (player) => {
 let attack = (offensivePlayer, defensivePlayer) => {
 
     let dmgNumber = damage(offensivePlayer);
+    let healNumber = nanoHeal(defensivePlayer);
 
+    if (nanobotCheck(defensivePlayer) === true) {
+      defensivePlayer.health += nanoHeal();
+      string.robotNanobotHealString(defensivePlayer, nanoHeal);
+    }
 
-      if (empathyCheck(defensivePlayer) === true) {
-        string.robotEmpathyString(offensivePlayer, defensivePlayer);
-      }
+    if (empathyCheck(defensivePlayer) === true) {
+      string.robotEmpathyString(offensivePlayer, defensivePlayer);
+    }
       else if (evasion(defensivePlayer) === true) {
         string.robotDodgeString(offensivePlayer, defensivePlayer);
     } else if (defensivePlayer.shield > 0) {
@@ -81,5 +99,7 @@ module.exports = {
     evasion,
     victoryCheck,
     shieldCheck,
-    empathyCheck
+    empathyCheck,
+    nanobotCheck,
+    nanoHeal
 };
