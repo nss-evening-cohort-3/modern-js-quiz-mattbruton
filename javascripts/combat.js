@@ -62,7 +62,7 @@ let victoryCheck = (firstPlayer, secondPlayer) => {
     let victoryString = "";
 
     if (firstPlayer.health <= 0 && secondPlayer.health <= 0) {
-        victoryString += "Both bots are scrapped!";
+        victoryString += "Both of these bots are scrapped!";
         $('#combatText').html(`${victoryString}`);
     } else if (firstPlayer.health <= 0) {
         victoryString += `${secondPlayer.name} has defeated ${firstPlayer.name}!`;
