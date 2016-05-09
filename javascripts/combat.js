@@ -4,20 +4,26 @@ let weapons = require('./weapons.js');
 let mods = require('./mods.js');
 let string = require('./string.js');
 
+/* checks to see if the player has selected the restorative nanobot modification for use in later function */
 
 let nanobotCheck = (player) => {
-  let nanoChecker = false;
-  if (player.nanoCheck > 0) {
-    nanoChecker = true;
-  }
-  return nanoChecker;
+    let nanoChecker = false;
+    if (player.nanoCheck > 0) {
+        nanoChecker = true;
+    }
+    return nanoChecker;
 };
 
+/* if player has selected restorative nanobots, they are healed for the amount randomly generated within this function */
+
 let nanoHeal = () => {
-  let nanoHealAmount = Math.floor(Math.random() * 5);
-  
-  return nanoHealAmount;
+    let nanoHealAmount = Math.floor(Math.random() * 5);
+
+    return nanoHealAmount;
 };
+
+/* this is the function for calculating player damage. it takes the minimum damage stat from a weapon and adds
+a random number in the additional damage range to the minimum. */
 
 let damage = (player) => {
     let totalDamage = 0;
@@ -25,6 +31,8 @@ let damage = (player) => {
     totalDamage += Math.floor(Math.random() * player.additionalDamageRange);
     return totalDamage;
 };
+
+/* checks if the shield is less than zero and sets it to zero */
 
 let shieldCheck = (player) => {
     if (player.shield < 0) {
@@ -38,7 +46,7 @@ let shieldCheck = (player) => {
 let empathyCheck = (player) => {
     let empathy = false;
     if (player.empCheck > Math.floor(Math.random() * 8)) {
-      empathy = true;
+        empathy = true;
     }
     return empathy;
 };
@@ -52,14 +60,13 @@ let attack = (offensivePlayer, defensivePlayer) => {
     let healNumber = nanoHeal(defensivePlayer);
 
     if (nanobotCheck(defensivePlayer) === true) {
-      defensivePlayer.health += nanoHeal();
-      string.robotNanobotHealString(defensivePlayer, nanoHeal);
+        defensivePlayer.health += nanoHeal();
+        string.robotNanobotHealString(defensivePlayer, nanoHeal);
     }
 
     if (empathyCheck(defensivePlayer) === true) {
-      string.robotEmpathyString(offensivePlayer, defensivePlayer);
-    }
-      else if (evasion(defensivePlayer) === true) {
+        string.robotEmpathyString(offensivePlayer, defensivePlayer);
+    } else if (evasion(defensivePlayer) === true) {
         string.robotDodgeString(offensivePlayer, defensivePlayer);
     } else if (defensivePlayer.shield > 0) {
         defensivePlayer.shield -= dmgNumber;
@@ -86,9 +93,9 @@ let evasion = (player) => {
 log viewable so the users can see who was defeated. */
 
 let victoryView = () => {
-  $('#battleStartBtn').hide();
-  $('#playerOneCard').hide();
-  $('#playerTwoCard').hide();
+    $('#battleStartBtn').hide();
+    $('#playerOneCard').hide();
+    $('#playerTwoCard').hide();
 };
 
 /* Checks if both, or one of the players have 0 or less health, then changes to the view that displays which character

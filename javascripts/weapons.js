@@ -20,7 +20,7 @@ WeaponCache.Weapon = function() {
 ///////////////////////
 
 
-/* EMP Rifle has lower damage, but will add functionality on chance to disable the oppenent bot for a round. */
+/* EMP Rifle has medium low end, larger random range than most other weapons. */
 
 
 WeaponCache.EmpRifle = function() {

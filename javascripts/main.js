@@ -87,7 +87,8 @@ $(document).ready(function() {
         $('#weapon_select').show();
     });
 
-
+    /* when the user clicks a weapon button, the weapon select view is hidden and the user's weapon property is
+    set to the selected weapon, then modifications are shown. */
 
     $('.wepbtn').click(function(event) {
         $('#weapon_select').hide();
@@ -95,6 +96,12 @@ $(document).ready(function() {
 
         $('#mod_select').show();
     });
+
+    /* when a modification button is clicked, the user's mod property is set to that particular object. 
+    playerCount is incremented up each time this happens. the first time it is incremented, the header for
+    player one is replaced with one for player two, and the buttons now set values for player two instead 
+    of player one. if playerCount is incremented up to two at this point, the character selection screen is 
+    hidden and the battledome view is shown. */
 
     $('.modbtn').click(function(event) {
         player.setMod(new mods.Armory[event.target.id]());
@@ -121,25 +128,28 @@ $(document).ready(function() {
 
     });
 
-    let battleSequence = () =>  {
-      combat.attack(robots.PlayerOne, robots.PlayerTwo);
-      combat.shieldCheck(robots.PlayerTwo);
-      string.robotToCard(robots.PlayerOne, "#playerOneCard");
-      combat.victoryCheck(robots.PlayerOne, robots.PlayerTwo);
+    /* the two battle sequence functions are run upon clicking the battle button within the battledome view. 
+    these functions are described in greater detail in their corresponding js files. */
+
+    let battleSequence = () => {
+        combat.attack(robots.PlayerOne, robots.PlayerTwo);
+        combat.shieldCheck(robots.PlayerTwo);
+        string.robotToCard(robots.PlayerOne, "#playerOneCard");
+        combat.victoryCheck(robots.PlayerOne, robots.PlayerTwo);
     };
 
 
-  
-    let battleSequenceTwo = () =>  {
-      combat.attack(robots.PlayerTwo, robots.PlayerOne);
-      combat.shieldCheck(robots.PlayerOne);
-      string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
-      combat.victoryCheck(robots.PlayerTwo, robots.PlayerOne);
+
+    let battleSequenceTwo = () => {
+        combat.attack(robots.PlayerTwo, robots.PlayerOne);
+        combat.shieldCheck(robots.PlayerOne);
+        string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
+        combat.victoryCheck(robots.PlayerTwo, robots.PlayerOne);
     };
-    
+
     $('#battleStartBtn').click(function() {
-      battleSequence();
-      battleSequenceTwo();
+        battleSequence();
+        battleSequenceTwo();
     });
-    
+
 });
