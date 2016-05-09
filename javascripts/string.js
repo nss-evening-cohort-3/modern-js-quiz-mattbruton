@@ -22,7 +22,7 @@ let robotEmpathyString = (offensivePlayer, defensivePlayer) => {
 };
 
 let robotDodgeString = (offensivePlayer, defensivePlayer) => {
-    let dodgeString = `<h5>${defensivePlayer.name} dodges ${offensivePlayer.name}'s attack!</h5>`;
+    let dodgeString = `<h5>${offensivePlayer.name} attacks, but ${defensivePlayer.name} swiftly dodges!</h5>`;
     if ($('#combatText').children().length > 7) {
         $('#combatText').children('h5:first').remove();
     }

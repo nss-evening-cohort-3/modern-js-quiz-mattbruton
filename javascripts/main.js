@@ -9,6 +9,8 @@ let string = require('./string.js');
 /* characterCreationView sets which elements are visable on load and upon switching between Player One and 
 Player Two in the creation process */
 
+let checkToKillIntervals = false;
+
 let characterCreationView = () => {
     $('#model_select').hide();
     $('#weapon_select').hide();
@@ -119,17 +121,25 @@ $(document).ready(function() {
 
     });
 
+    let battleSequence = () =>  {
+      combat.attack(robots.PlayerOne, robots.PlayerTwo);
+      combat.shieldCheck(robots.PlayerTwo);
+      string.robotToCard(robots.PlayerOne, "#playerOneCard");
+      combat.victoryCheck(robots.PlayerOne, robots.PlayerTwo);
+    };
 
+
+  
+    let battleSequenceTwo = () =>  {
+      combat.attack(robots.PlayerTwo, robots.PlayerOne);
+      combat.shieldCheck(robots.PlayerOne);
+      string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
+      combat.victoryCheck(robots.PlayerTwo, robots.PlayerOne);
+    };
+    
     $('#battleStartBtn').click(function() {
-        console.log("2", robots.PlayerTwo);
-        combat.attack(robots.PlayerOne, robots.PlayerTwo);
-        combat.attack(robots.PlayerTwo, robots.PlayerOne);
-        combat.shieldCheck(robots.PlayerOne);
-        combat.shieldCheck(robots.PlayerTwo);
-        string.robotToCard(robots.PlayerOne, "#playerOneCard");
-        string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
-        combat.victoryCheck(robots.PlayerOne, robots.PlayerTwo);
-        console.log("p2 evasion", combat.evasion(robots.PlayerTwo));
+      battleSequence();
+      battleSequenceTwo();
     });
-
+    
 });

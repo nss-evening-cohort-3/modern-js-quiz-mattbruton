@@ -75,19 +75,27 @@ let evasion = (player) => {
     return evasionCheck;
 };
 
+let victoryView = () => {
+  $('#battleStartBtn').hide();
+  $('#playerOneCard').hide();
+  $('#playerTwoCard').hide();
+};
 
 let victoryCheck = (firstPlayer, secondPlayer) => {
     let victoryString = "";
 
     if (firstPlayer.health <= 0 && secondPlayer.health <= 0) {
-        victoryString += "Both of these bots are scrapped!";
+        victoryString += `<h2>Both of these bots are scrapped!</h2>`;
         $('#combatText').html(`${victoryString}`);
+        victoryView();
     } else if (firstPlayer.health <= 0) {
-        victoryString += `${secondPlayer.name} has defeated ${firstPlayer.name}!`;
+        victoryString += `<h2>${secondPlayer.name} has defeated ${firstPlayer.name}!</h2>`;
         $('#combatText').html(`${victoryString}`);
+        victoryView();
     } else if (secondPlayer.health <= 0) {
-        victoryString += `${firstPlayer.name} has defeated ${secondPlayer.name}!`;
+        victoryString += `<h2>${firstPlayer.name} has defeated ${secondPlayer.name}!</h2>`;
         $('#combatText').html(`${victoryString}`);
+        victoryView();
     }
 
 };
