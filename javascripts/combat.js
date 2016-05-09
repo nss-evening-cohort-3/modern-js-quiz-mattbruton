@@ -33,6 +33,8 @@ let shieldCheck = (player) => {
     return player;
 };
 
+/* give the player a 1 in 8 chance to cause opponent to not deal damage in a round of combat. */
+
 let empathyCheck = (player) => {
     let empathy = false;
     if (player.empCheck > Math.floor(Math.random() * 8)) {
@@ -40,6 +42,9 @@ let empathyCheck = (player) => {
     }
     return empathy;
 };
+
+/* function that calls the other combat functions depending on conditions. checks if player has restorative nanobots,
+ empathy virus mod, evasion, or a shield before deducting health based on their opponent's attack. */
 
 let attack = (offensivePlayer, defensivePlayer) => {
 
@@ -65,6 +70,8 @@ let attack = (offensivePlayer, defensivePlayer) => {
     }
 };
 
+/* used in the attack function to determine if a robot avoids an attack. It generates a random number between
+1 and 100, and if the robot's evasion stat is greater than or equal to that number, they take no damage that round. */
 
 let evasion = (player) => {
     let evasionCheck = false;
@@ -75,11 +82,17 @@ let evasion = (player) => {
     return evasionCheck;
 };
 
+/* Used in victory check function to hide player cards, the button that progresses the battle and leaves the combat
+log viewable so the users can see who was defeated. */
+
 let victoryView = () => {
   $('#battleStartBtn').hide();
   $('#playerOneCard').hide();
   $('#playerTwoCard').hide();
 };
+
+/* Checks if both, or one of the players have 0 or less health, then changes to the view that displays which character
+was defeated. */
 
 let victoryCheck = (firstPlayer, secondPlayer) => {
     let victoryString = "";
