@@ -210,10 +210,6 @@ let PlayerTwo = new Robot.Player();
 PlayerTwo.name = "Player Two";
 
 
-console.log(PlayerOne.health);
-console.log(PlayerTwo);
-console.log(PlayerOne);
-
 /* Export this business */
 
 module.exports = {

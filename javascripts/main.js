@@ -50,9 +50,6 @@ robotCheck();
 $(document).ready(function() {
 
 
-    console.log(player);
-
-
     characterCreationView();
 
     /* When a type button is clicked, the user's type selection is stored in their Player object, the type view is hidden,
@@ -106,8 +103,6 @@ $(document).ready(function() {
     $('.modbtn').click(function(event) {
         player.setMod(new mods.Armory[event.target.id]());
 
-
-        console.log("1", robots.PlayerOne);
         characterCreationView();
         playerCount++;
 
@@ -124,7 +119,6 @@ $(document).ready(function() {
             string.robotToCard(robots.PlayerOne, "#playerOneCard");
             string.robotToCard(robots.PlayerTwo, "#playerTwoCard");
         }
-        console.log(playerCount);
 
     });
 
