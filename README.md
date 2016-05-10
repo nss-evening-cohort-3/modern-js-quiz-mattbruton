@@ -1,24 +1,25 @@
 # Modern JavaScript Developer Quiz
+
 # Robot Battledome
 
-## Setup
+## To Run:
 
-1. `cd` to your quizzes directory.
-1. Clone this repository and `cd` into the directory it creates.
-1. Now run the following commands.
+1.
+2.
+3.
+4.
+5.
 
-    ```bash
-    git checkout -b quiz
-    touch index.html
-    touch quiz.js
-    touch quiz.css
-    ```
+## Description:
 
-You are now ready to work in the `quiz` branch.
+This project is the Evening Cohort 3 Modern Javascript Developer Quiz at Nashville Software School. The primary goals of the quiz are to test skills involving:
 
-When your work in complete, push up the branch (`git push origin quiz`) and submit the pull request on Github.
+1. Prototypal Inheritance.
+2. ES6 features/syntax.
+3. Ability to interact with the DOM through jQuery. 
+4. Ability to install and utilize tools (ie. Gulp, Browserify, JSHint) that aid in app development.
 
-## Instructions
+## Requirements:
 
 ### Basic Requirements
 
